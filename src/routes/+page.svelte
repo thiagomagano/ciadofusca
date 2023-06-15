@@ -106,6 +106,21 @@
     padding-block: 2rem;
     padding-left: 0;
   }
+
+  @media (max-width: 1240px) {
+    :root {
+      --spacing-inline: 1rem;
+    }
+    ul {
+      grid-template-columns: repeat(2, minmax(350px, 1fr));
+    }
+  }
+  @media (max-width: 720px) {
+
+    ul {
+      grid-template-columns: minmax(350px, 1fr);
+    }
+  }
    
    h3 {
     color: var(--clr-primary);
