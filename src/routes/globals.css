@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "VW Head";
+  src: url("/static/assets/fonts/VWHead-Regular.otf") format("otf"),
+    url("/static/assets/fonts/VWHead-Bold.otf") format("otf");
+}
+
+@font-face {
+  font-family: "VW Text";
+  src: url("/static/assets/fonts/VWText-Regular.otf") format("otf"),
+    url("/static/assets/fonts/VWText-Bold.otf") format("otf");
+
+}
+
+:root {
+  --clr-primary: hsl(72, 35%, 60%);
+  --clr-secondary: hsl(210, 97%, 25%);
+
+  --clr-VW-blue: hsl(204, 67%, 40%);
+  --clr-VW-blue-600: hsl(204, 87%, 40%);
+  --clr-VW-blue-300: hsl(204, 47%, 40%);
+  --clr-VW-light: hsl(195, 100%, 46%);
+  --clr-VW-yellow: hsl(49, 100%, 50%);
+  --clr-VW-green: hsl(104, 57%, 44%);
+
+  --clr-neutral-900: hsl(0, 0%, 0%);
+  --clr-neutral-600: hsl(0, 0%, 30%);
+  --clr-neutral-400: hsl(0, 0%, 50%);
+  --clr-neutral-300: hsl(0, 0%, 80%);
+  --clr-neutral-200: hsl(0, 5%, 92%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --clr-vw-blue-100: #0d4671;
+  --clr-vw-blue-100: #204568;
+  --clr-vw-blue-200: #2b4360;
+  --clr-vw-blue-300: #324258;
+  --clr-vw-blue-400: #37414f;
+  --clr-vw-blue-500: #3c4047;
+  --clr-vw-blue-600: #3f3f3f;
+
+
+  --ff-text: "VW Text", sans-serif;
+  --ff-head: "VW Head", sans-serif;
+
+  --spacing-inline: 20rem;
+}
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--clr-neutral-200);
+  font-family: var(--ff-text);
+}
+
+a {
+  color: var(--clr-neutral-100);
+  text-decoration: none;
+}
+
+main {
+  padding-inline: var(--spacing-inline);
+  padding-top: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "VW Head", sans-serif;
+  color: var(--clr-primary);
+}
+
+img {
+  width: 100%;
+}
