@@ -1,15 +1,11 @@
 <script>
-  
-  export let data;
+	export let data;
+	import Carro from '../Carro.svelte';
 </script>
 
-<h2>Lista de carros</h2>
-
-{#each data.items as car }
-<div>
-  <h3>{car.titulo}</h3>
-  <p>Marca: {car.marca}</p>
-  <p>Preço: {car.preco}</p>
-  <p>Descrição: {@html car.descricao}</p>
-</div>
-{/each}
+<h1>Confira nossos Veículos disponiveis</h1>
+<ul class="grid-of-cards">
+	{#each data.items as car}
+		<Carro {car} />
+	{/each}
+</ul>

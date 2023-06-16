@@ -88,3 +88,23 @@ h4 {
 img {
   width: 100%;
 }
+
+ul.grid-of-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(350px, 1fr));
+  gap: 1rem;
+  padding-block: 2rem;
+  padding-left: 0;
+}
+
+@media (max-width: 1248px) {
+  ul.grid-of-cards {
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  ul.grid-of-cards {
+    grid-template-columns: minmax(350px, 1fr);
+  }
+}
