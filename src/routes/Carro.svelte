@@ -1,27 +1,27 @@
 <script>
 	export let car;
 	const URL_API_FILES = 'http://ciadofusca.fly.dev/api/files/carros';
+	import { stringToBRL } from '$lib/utils/formatMoney';
 </script>
 
-<li class="card">
-	<div class="capa">
-		{#if car.capa}
-			<img src={`${URL_API_FILES}/${car.id}/${car.capa}`} alt={car.titulo} />
-		{/if}
-	</div>
-	<h2>{car.titulo}</h2>
-	<p>{car.ano}</p>
-	<h3>
-		{car.preco.toLocaleString('pt-BR', {
-			style: 'currency',
-			currency: 'BRL'
-		})}
-	</h3>
-	<div class="button-wrapper">
-		<button class="btn outline">DETALHES</button>
-		<button class="btn fill">COMPRE JÁ</button>
-	</div>
-</li>
+<a href={`/carros/${car.id}`}>
+	<li class="card">
+		<div class="capa">
+			{#if car.capa}
+				<img src={`${URL_API_FILES}/${car.id}/${car.capa}`} alt={car.titulo} />
+			{/if}
+		</div>
+		<h2>{car.titulo}</h2>
+		<p>{car.ano}</p>
+		<h3>
+			{stringToBRL(car.preco)}
+		</h3>
+		<div class="button-wrapper">
+			<button class="btn outline">DETALHES</button>
+			<button class="btn fill">COMPRE JÁ</button>
+		</div>
+	</li>
+</a>
 
 <style>
 	h3 {
