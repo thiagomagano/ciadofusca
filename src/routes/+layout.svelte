@@ -5,19 +5,21 @@ import "./globals.css";
 </script>
 
 <header>
+  <nav>
     <div class="logo">
       <img src="assets/images/logos/logo-white.png" alt="Logo cia do fusca">
       <span class="logo">Cia do Fusca</span>
     </div>
     <ul class="servicos">
-<li><a href="/">Home</a></li>
-<li><a href="/carros">Carros</a></li>
-<li><a href="/carros">Serviços</a></li>
-<li><a href="/carros">Quem somos</a></li>
-<li><a href="/carros">Como Chegar</a></li>
-<li><a href="/carros">Contato</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/carros">Carros</a></li>
+      <li><a href="/servicos">Serviços</a></li>
+      <li><a href="/quemsomos">Quem somos</a></li>
+      <li><a href="/comochegar">Como Chegar</a></li>
+      <li><a href="/contato">Contato</a></li>
     </ul>
-  </header>
+  </nav>
+</header>
 <main>
   <slot />
 </main>
@@ -39,13 +41,26 @@ import "./globals.css";
     list-style: none;
     gap: 1.5ch;
   }
-  header {
+  header { 
+    background-color: var(--clr-VW-blue);
+    padding-block: 1rem;
+    width: 100%;
+  }
+  nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding-block: 1rem;
+    max-width: var(--spacing-max-w);
+    margin: 0 auto;
     padding-inline: var(--spacing-inline);
-    background-color: var(--clr-VW-blue);
+  }
+
+  @media (max-width: 720px) {
+    ul.servicos {
+      display: none;
+    }
+    nav {
+      justify-content: center;
+    }
   }
 </style>

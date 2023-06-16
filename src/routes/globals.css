@@ -41,7 +41,8 @@
   --ff-text: "VW Text", sans-serif;
   --ff-head: "VW Head", sans-serif;
 
-  --spacing-inline: 20rem;
+  --spacing-inline: 2rem;
+  --spacing-max-w: 1248px;
 }
 
 
@@ -72,6 +73,8 @@ a {
 main {
   padding-inline: var(--spacing-inline);
   padding-top: 2rem;
+  max-width: var(--spacing-max-w);
+  margin: 0 auto;
 }
 
 h1,
