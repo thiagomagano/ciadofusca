@@ -121,4 +121,13 @@ ul.grid-of-cards {
   ul.grid-of-cards {
     grid-template-columns: minmax(350px, 1fr);
   }
+
+  :root {
+    --spacing-inline: 0;
+  }
+
+  main {
+    padding: 0;
+  }
+
 }

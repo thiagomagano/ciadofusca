@@ -23,7 +23,7 @@
 		const PHONE = `5551993438767`;
 		const BODYMSG = `Olá, gostaria de saber mais sobre este veículo que está no site: ${data.titulo} ${data.ano} ${window.location.href}`;
 		const wppApiRedirectUrl = `${BASEURL}phone=${PHONE}&text=${BODYMSG}`;
-		//window.location.href = whtasappMsg;
+		//window.location.href = wppApiRedirectUrl;
 
 		const link = document.createElement('a');
 		link.href = wppApiRedirectUrl;
@@ -34,7 +34,7 @@
 
 <section>
 	<div class="max-w-4xl">
-		<Carousel {images} showCaptions={false} showThumbs={false} />
+		<Carousel {images} showCaptions={false} showThumbs={false} divClass="h-auto" />
 	</div>
 
 	<div class="infos">
@@ -45,7 +45,7 @@
 			<li><strong>Preço: </strong> {toBRL(data.preco)}</li>
 		</ul>
 		<div class="button-group">
-			<button class="zap" on:click={redirecionaCarroProZap}
+			<button class="zap" on:click={redirecionaCarroProZap} target="_blank"
 				><iconify-icon icon="ic:outline-whatsapp" /> Fale com o vendedor
 			</button>
 			<button class="interesse"><iconify-icon icon="game-icons:car-key" /> Tenho Interesse </button>
@@ -56,7 +56,7 @@
 <style>
 	section {
 		display: grid;
-		grid-template-columns: 2fr 1fr;
+		grid-template-columns: minmax(350px, 2fr) minmax(200px, 1fr);
 		gap: 2rem;
 	}
 	div.infos {
@@ -97,5 +97,15 @@
 	button.interesse {
 		background-color: var(--clr-primary);
 		color: var(--clr-neutral-100);
+	}
+
+	@media (max-width: 720px) {
+		section {
+			grid-template-columns: minmax(320px, 2fr);
+			gap: 1ch;
+		}
+		div.infos {
+			padding-inline: 0.5rem;
+		}
 	}
 </style>
