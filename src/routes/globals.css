@@ -12,7 +12,8 @@
 }
 
 :root {
-  --clr-primary: hsl(72, 35%, 60%);
+  --clr-primary: hsl(210, 97%, 25%);
+  /* --clr-primary: hsl(72, 35%, 60%); */
   --clr-secondary: hsl(210, 97%, 25%);
 
   --clr-VW-blue: hsl(204, 67%, 40%);

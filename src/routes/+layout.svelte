@@ -6,7 +6,7 @@
 <header>
 	<nav>
 		<div class="logo">
-			<img src="./assets/images/logos/logo-white.png" alt="Logo cia do fusca" />
+			<img src="/assets/images/logos/logo-white.png" alt="Logo cia do fusca" />
 			<span class="logo">Cia do Fusca</span>
 		</div>
 		<ul class="servicos">

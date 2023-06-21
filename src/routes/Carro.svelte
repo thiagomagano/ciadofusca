@@ -1,7 +1,7 @@
 <script>
 	export let car;
 	const URL_API_FILES = 'http://ciadofusca.fly.dev/api/files/carros';
-	import { stringToBRL } from '$lib/utils/formatMoney';
+	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
 </script>
 
 <a href={`/carros/${car.id}`}>
@@ -14,11 +14,11 @@
 		<h2>{car.titulo}</h2>
 		<p>{car.ano}</p>
 		<h3>
-			{stringToBRL(car.preco)}
+			{toBRL(car.preco)}
 		</h3>
 		<div class="button-wrapper">
-			<button class="btn outline">DETALHES</button>
-			<button class="btn fill">COMPRE JÁ</button>
+			<button class="btn fill">DETALHES</button>
+			<!-- <button class="btn fill">COMPRE JÁ</button> -->
 		</div>
 	</li>
 </a>
