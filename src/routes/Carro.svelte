@@ -46,9 +46,9 @@
 	}
 	li.card {
 		backdrop-filter: blur(16px) saturate(180%);
-		background-color: var(--clr-neutral-200);
+		background-color: var(--clr-neutral-100);
 		border-radius: 12px;
-		border: 1px solid var(--clr-neutral-300);
+		border: 1px solid var(--clr-neutral-200);
 		padding: 38px;
 		filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.04));
 		text-align: center;

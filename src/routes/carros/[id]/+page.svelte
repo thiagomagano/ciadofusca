@@ -2,9 +2,10 @@
 	export let data;
 	const URL_API_FILES = 'http://ciadofusca.fly.dev/api/files/carros';
 	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
-	import { Carousel, CarouselTransition } from 'flowbite-svelte';
-	//import Icon from '@iconify/svelte';
-	// ./imageData/+server.js has the following
+	import { Carousel } from 'flowbite-svelte';
+
+	import Dialog from './Dialog.svelte';
+
 	export const images = [];
 
 	if (data.imagens.length > 0) {
@@ -18,7 +19,7 @@
 		});
 	}
 
-	function redirecionaCarroProZap() {
+	function redirecionaClienteProZap() {
 		const BASEURL = `https://api.whatsapp.com/send?`;
 		const PHONE = `5551993438767`;
 		const BODYMSG = `Olá, gostaria de saber mais sobre este veículo que está no site: ${data.titulo} ${data.ano} ${window.location.href}`;
@@ -30,6 +31,8 @@
 		link.target = '_blank';
 		link.click();
 	}
+
+	let isOpen = false;
 </script>
 
 <section>
@@ -45,12 +48,15 @@
 			<li class="preco">{toBRL(data.preco)}</li>
 		</ul>
 		<div class="button-group">
-			<button class="zap" on:click={redirecionaCarroProZap} target="_blank"
+			<button class="zap" on:click={redirecionaClienteProZap} target="_blank"
 				><iconify-icon icon="ic:outline-whatsapp" /> Fale com o vendedor
 			</button>
-			<button class="interesse"><iconify-icon icon="game-icons:car-key" /> Tenho Interesse </button>
+			<button on:click={() => (isOpen = true)} class="interesse"
+				><iconify-icon icon="game-icons:car-key" /> Registre seu Interesse
+			</button>
 		</div>
 	</div>
+	<Dialog bind:isOpen carro={data} />
 </section>
 
 <style>
