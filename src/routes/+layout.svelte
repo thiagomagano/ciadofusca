@@ -6,8 +6,10 @@
 <header>
 	<nav>
 		<div class="logo">
-			<img src="/assets/images/logos/logo-white.png" alt="Logo cia do fusca" />
-			<span class="logo">Cia do Fusca</span>
+			<a href="/">
+				<img src="/assets/images/logos/logo-white.png" alt="Logo cia do fusca" />
+				<span class="logo">Cia do Fusca</span>
+			</a>
 		</div>
 		<ul class="servicos">
 			<li><a href="/">Home</a></li>
@@ -22,6 +24,8 @@
 <main>
 	<slot />
 </main>
+
+<footer>Cia do fusca</footer>
 
 <style>
 	div.logo {
@@ -40,7 +44,7 @@
 		gap: 1.5ch;
 	}
 	header {
-		background-color: var(--clr-VW-blue);
+		background-color: var(--clr-primary);
 		padding-block: 1rem;
 		width: 100%;
 	}
@@ -51,6 +55,16 @@
 		max-width: var(--spacing-max-w);
 		margin: 0 auto;
 		padding-inline: var(--spacing-inline);
+	}
+
+	footer {
+		background-color: var(--clr-primary);
+		height: 60px;
+		padding: 1rem;
+		display: grid;
+		place-items: center;
+		color: var(--clr-neutral-100);
+		width: 100%;
 	}
 
 	@media (max-width: 720px) {

@@ -38,11 +38,11 @@
 	</div>
 
 	<div class="infos">
+		<h2>{data.titulo}</h2>
 		<ul>
-			<li><h2>{data.titulo}</h2></li>
 			<li><strong>Ano/Modelo: </strong> {data.ano} / {data.modelo}</li>
 			<li><strong>Descrição: </strong> {@html data.descricao}</li>
-			<li><strong>Preço: </strong> {toBRL(data.preco)}</li>
+			<li class="preco">{toBRL(data.preco)}</li>
 		</ul>
 		<div class="button-group">
 			<button class="zap" on:click={redirecionaCarroProZap} target="_blank"
@@ -62,7 +62,6 @@
 	div.infos {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
 		gap: 1rem;
 	}
 
@@ -70,6 +69,18 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1ch;
+	}
+
+	ul li {
+		border-bottom: 1px solid var(--clr-neutral-300);
+		padding-bottom: 0.2rem;
+		line-height: 2;
+	}
+
+	ul li.preco {
+		font-size: 2rem;
+		color: var(--clr-VW-green);
+		font-weight: bold;
 	}
 
 	div.button-group {

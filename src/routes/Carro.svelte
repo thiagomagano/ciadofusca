@@ -12,24 +12,27 @@
 			{/if}
 		</div>
 		<h2>{car.titulo}</h2>
-		<p>{car.ano}</p>
-		<h3>
+		<p>{car.ano}/{car.modelo}</p>
+		<h2 class="preco">
 			{toBRL(car.preco)}
-		</h3>
+		</h2>
 		<div class="button-wrapper">
-			<button class="btn fill">DETALHES</button>
+			<button class="btn btn-outline">VER DETALHES</button>
 			<!-- <button class="btn fill">COMPRE JÁ</button> -->
 		</div>
 	</li>
 </a>
 
 <style>
-	h3 {
-		color: var(--clr-primary);
-	}
 	h2 {
-		color: var(--clr-neutral-600);
+		color: var(--clr-neutral-900);
 	}
+
+	h2.preco {
+		color: var(--clr-VW-green);
+		font-size: 1.8rem;
+	}
+
 	p {
 		color: var(--clr-neutral-400);
 	}
@@ -53,6 +56,7 @@
 
 	div.capa img {
 		border-radius: 10px;
+		min-width: 350px;
 	}
 	div.button-wrapper {
 		display: flex;
@@ -66,32 +70,15 @@
 		cursor: pointer;
 	}
 
-	.outline {
-		background: transparent;
-		color: var(--clr-primary);
-		border: 1px solid var(--clr-primary);
-		transition: all 0.3s ease;
-	}
-
-	.outline:hover {
-		transform: scale(1.05);
-		color: var(--clr-primary);
-		border-color: var(--clr-primary);
-		transition: all 0.2s ease;
-	}
-
-	.fill {
+	.btn-outline {
 		background: var(--clr-primary);
-		color: rgba(255, 255, 255, 0.95);
-		filter: drop-shadow(0);
-		font-weight: bold;
+		color: var(--clr-neutral-100);
+
 		transition: all 0.3s ease;
 	}
 
-	.fill:hover {
-		transform: scale(1.125);
-		border-color: rgba(255, 255, 255, 0.9);
-		filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.04));
-		transition: all 0.2s ease;
+	.btn-outline:hover {
+		transform: scale(1.05);
+		transition: all 0.4s ease;
 	}
 </style>
