@@ -4,13 +4,12 @@
 	export let carro;
 </script>
 
-<!-- <Button on:click={() => (isOpen = true)}>Form modal</Button> -->
-
 <Modal bind:open={isOpen} size="xs" autoclose={false} class="w-full" outsideclose={true}>
-	<form class="flex flex-col space-y-6" action="?/register" method="POST">
-		<h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+	<form class="flex flex-col space-y-6" method="POST">
+		<h3 class="text-xl font-medium text-gray-900 dark:text-white">
 			Registre seu interesse no {carro.titulo}
 		</h3>
+		<p>Para isso, precisamos de algumas informações:</p>
 		<Label class="space-y-2">
 			<span>Seu Nome *</span>
 			<Input type="text" name="nome" placeholder="Fulano da silva" required />
@@ -24,6 +23,6 @@
 			<Input type="email" name="email" placeholder="fulano@gmail.com" />
 		</Label>
 
-		<Button formaction="?/register" type="submit" class="w-full1">Registrar</Button>
+		<Button type="submit" class="w-full1">Registrar</Button>
 	</form>
 </Modal>

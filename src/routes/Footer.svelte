@@ -1,0 +1,127 @@
+<script>
+</script>
+
+<footer>
+	<div class="info-rodape">
+		<section>
+			<h5 class="icone-wrapper">
+				<iconify-icon icon="material-symbols:chat-outline" /> Atendimento
+			</h5>
+			<ul class="atendimento">
+				<li class="icone-wrapper">
+					<iconify-icon icon="icon-park-outline:local-two" />
+					Rua Joaquim Silveira, 924 São Sebastião, Porto Alegre RS
+				</li>
+				<li class="icone-wrapper"><iconify-icon icon="ic:outline-phone" />(51) 33448970</li>
+				<li class="icone-wrapper">
+					<iconify-icon icon="material-symbols:mail-outline" />ciadofuscapoa@gmail.com
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h5 class="icone-wrapper">
+				<iconify-icon icon="icon-park-outline:time" /> Horário de Atendimento
+			</h5>
+			<ul>
+				<li>Segunda a Sexta:</li>
+				<li>09:00h às 18:30h</li>
+			</ul>
+			<ul>
+				<li>Sabádo:</li>
+				<li>09:00h ás 13:00h</li>
+			</ul>
+		</section>
+		<section>
+			<h5 class="icone-wrapper">
+				<iconify-icon icon="material-symbols:share-outline" /> Fique por dentro das novidades
+			</h5>
+			<ul class="redes">
+				<li>
+					<a href="https://www.facebook.com/CiadofuscaRS">
+						<iconify-icon icon="ic:outline-facebook" width="48" heigth="48" /></a
+					>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/ciadofuscaoficial"
+						><iconify-icon icon="mdi:instagram" width="48" heigth="48" />
+					</a>
+				</li>
+			</ul>
+		</section>
+	</div>
+</footer>
+<div class="dev-rodape">
+	Desenvolvido por Thiago Magano © 2023 Cia Do Fusca. Todos os Direitos Reservados.
+</div>
+
+<style>
+	footer {
+		padding: 1rem;
+		background-color: var(--clr-primary);
+		color: var(--clr-neutral-100);
+	}
+	div.footer-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+	div.info-rodape {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1rem;
+		max-width: var(--spacing-max-w);
+		margin: 0 auto;
+		padding-inline: var(--spacing-inline);
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	div.dev-rodape {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--clr-primary-100);
+		color: var(--clr-neutral-100);
+		height: 60px;
+		text-align: center;
+	}
+
+	.icone-wrapper {
+		display: flex;
+		justify-items: center;
+		align-items: center;
+		gap: 1ch;
+	}
+
+	ul.redes {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		gap: 1ch;
+	}
+
+	ul.atendimento {
+		display: flex;
+		flex-direction: column;
+		gap: 1ch;
+	}
+
+	@media (max-width: 720px) {
+		div.info-rodape {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+	}
+	@media (max-width: 480px) {
+		div.info-rodape {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+	}
+</style>

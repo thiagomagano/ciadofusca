@@ -12,9 +12,21 @@
 }
 
 :root {
-  --clr-primary: hsl(210, 97%, 25%);
-  /* --clr-primary: hsl(72, 35%, 60%); */
-  --clr-secondary: hsl(210, 97%, 25%);
+  --clr-primary: #02407e;
+
+  --clr-primary-100: #023a71;
+  --clr-primary-200: #356698;
+  --clr-primary-300: #4e79a5;
+  --clr-primary-400: #678cb2;
+  --clr-primary-400: #81a0bf;
+
+  --clr-primary-600: #9ab3cb;
+  --clr-primary-700: #b3c6d8;
+  --clr-primary-800: #ccd9e5;
+  --clr-primary-900: #e6ecf2;
+
+  /* --clr-primary: ; */
+  --clr-secondary: hsl(72, 35%, 60%);
 
   --clr-VW-blue: hsl(204, 67%, 40%);
   --clr-VW-blue-600: hsl(204, 87%, 40%);
@@ -75,12 +87,18 @@ a {
   text-decoration: none;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 45645;
+}
+
 main {
   padding-inline: var(--spacing-inline);
   padding-top: 2rem;
   max-width: var(--spacing-max-w);
   margin: 0 auto;
-  min-height: 85.5%;
+  min-height: 64%;
 }
 
 h1,

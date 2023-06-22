@@ -1,3 +1,4 @@
+import { redirect } from '@sveltejs/kit';
 
 /**
  * Creates a `POST /carros/:id` server-side endpoint
@@ -17,6 +18,8 @@ export async function POST({ request, locals }) {
   console.log(data);
 
   const record = await locals.pb.collection('interesses').create(data);
+
+  throw redirect(403, '/home')
 
   return new Response('Success...', record);
 }
