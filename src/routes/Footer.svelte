@@ -5,7 +5,7 @@
 	<div class="info-rodape">
 		<section>
 			<h5 class="icone-wrapper">
-				<iconify-icon icon="material-symbols:chat-outline" /> Atendimento
+				<iconify-icon icon="material-symbols:chat-outline" width="26" heigth="26" /> Atendimento
 			</h5>
 			<ul class="atendimento">
 				<li class="icone-wrapper">
@@ -20,7 +20,7 @@
 		</section>
 		<section>
 			<h5 class="icone-wrapper">
-				<iconify-icon icon="icon-park-outline:time" /> Horário de Atendimento
+				<iconify-icon icon="icon-park-outline:time" width="26" heigth="26" /> Horário de Atendimento
 			</h5>
 			<ul>
 				<li>Segunda a Sexta:</li>
@@ -33,17 +33,18 @@
 		</section>
 		<section>
 			<h5 class="icone-wrapper">
-				<iconify-icon icon="material-symbols:share-outline" /> Fique por dentro das novidades
+				<iconify-icon icon="material-symbols:share-outline" width="26" heigth="26" /> Fique por dentro
+				das novidades
 			</h5>
 			<ul class="redes">
 				<li>
 					<a href="https://www.facebook.com/CiadofuscaRS">
-						<iconify-icon icon="ic:outline-facebook" width="48" heigth="48" /></a
+						<iconify-icon icon="ic:outline-facebook" width="64" heigth="64" /></a
 					>
 				</li>
 				<li>
 					<a href="https://www.instagram.com/ciadofuscaoficial"
-						><iconify-icon icon="mdi:instagram" width="48" heigth="48" />
+						><iconify-icon icon="mdi:instagram" width="64" heigth="64" />
 					</a>
 				</li>
 			</ul>
@@ -60,12 +61,12 @@
 		background-color: var(--clr-primary);
 		color: var(--clr-neutral-100);
 	}
-	div.footer-wrapper {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
+
+	h5 {
+		font-size: 1.2rem;
+		font-weight: bold;
 	}
+
 	div.info-rodape {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
