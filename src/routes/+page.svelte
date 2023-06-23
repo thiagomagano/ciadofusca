@@ -1,7 +1,7 @@
 <script>
 	import Carro from './Carro.svelte';
 	import scrollIntoView from '$lib/utils/scrollIntoView';
-	import sortArray from '$lib/utils/sortArray';
+	import sortArray from '$lib/utils/sortArrays';
 
 	export let data;
 
