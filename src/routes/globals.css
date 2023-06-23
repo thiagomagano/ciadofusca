@@ -55,7 +55,7 @@
 
 
   --ff-text: "VW Text", sans-serif;
-  --ff-head: "VW Head", sans-serif;
+  --ff-head: "Georgia", serif;
 
   --spacing-inline: 2rem;
   --spacing-max-w: 1248px;
@@ -105,9 +105,11 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "VW Head", sans-serif;
+  font-family: var(--ff-head);
   color: var(--clr-primary);
   font-weight: bold;
+  text-transform: uppercase;
+
 }
 
 h1 {

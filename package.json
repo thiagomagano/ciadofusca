@@ -33,6 +33,7 @@
 		"flowbite": "^1.6.6",
 		"flowbite-svelte": "^0.38.2",
 		"pocketbase": "^0.15.2",
+		"svelte-scrollto": "^0.2.0",
 		"tailwind-merge": "^1.13.2"
 	}
 }

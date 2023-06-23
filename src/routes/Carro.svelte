@@ -25,7 +25,8 @@
 
 <style>
 	h2 {
-		color: var(--clr-neutral-900);
+		color: var(--clr-primary);
+		white-space: nowrap;
 	}
 
 	h2.preco {

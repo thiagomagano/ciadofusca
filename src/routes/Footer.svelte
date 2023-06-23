@@ -23,12 +23,12 @@
 				<iconify-icon icon="icon-park-outline:time" width="26" heigth="26" /> Horário de Atendimento
 			</h5>
 			<ul>
-				<li>Segunda a Sexta:</li>
+				<li class="font-bold">Segunda à Sexta:</li>
 				<li>09:00h às 18:30h</li>
 			</ul>
 			<ul>
-				<li>Sabádo:</li>
-				<li>09:00h ás 13:00h</li>
+				<li class="font-bold">Sábado:</li>
+				<li>09:00h às 13:00h</li>
 			</ul>
 		</section>
 		<section>
