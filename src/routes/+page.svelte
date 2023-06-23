@@ -1,10 +1,12 @@
 <script>
 	import Carro from './Carro.svelte';
 	import scrollIntoView from '$lib/utils/scrollIntoView';
+	import sortArray from '$lib/utils/sortArray';
 
 	export let data;
 
-	const iconeSizing = '40';
+	const carros = sortArray(data.items);
+	const ICONE_SIZING = '40';
 </script>
 
 <section class="banner">
@@ -18,16 +20,16 @@
 		</a>
 		<ul class="diferenciais">
 			<li class="item">
-				<iconify-icon icon="bi:credit-card" width={iconeSizing} heigth={iconeSizing} /> Parcelamos em
-				até 18x
+				<iconify-icon icon="bi:credit-card" width={ICONE_SIZING} heigth={ICONE_SIZING} /> Parcelamos
+				em até 18x
 			</li>
 			<li class="item">
-				<iconify-icon icon="bi:bookmark-star" width={iconeSizing} heigth={iconeSizing} /> Modelos únicos
+				<iconify-icon icon="bi:bookmark-star" width={ICONE_SIZING} heigth={ICONE_SIZING} /> Modelos únicos
 				e Exclusivos
 			</li>
 			<li class="item">
-				<iconify-icon icon="bi:card-checklist" width={iconeSizing} heigth={iconeSizing} />Seu Carro
-				Revisado e pronto pra usar
+				<iconify-icon icon="bi:card-checklist" width={ICONE_SIZING} heigth={ICONE_SIZING} />Seu
+				Carro Revisado e pronto pra usar
 			</li>
 		</ul>
 	</div>
@@ -42,7 +44,7 @@
 	<hr />
 
 	<ul class="grid-of-cards">
-		{#each data.items as car}
+		{#each carros as car}
 			<Carro {car} />
 		{/each}
 	</ul>
