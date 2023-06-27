@@ -72,9 +72,9 @@
 	}
 
 	.btn-outline {
-		background: var(--clr-primary);
-		color: var(--clr-neutral-100);
-
+		background: var(--clr-neutral-100);
+		color: var(--clr-primary-400);
+		border: 1px solid var(--clr-primary-400);
 		transition: all 0.3s ease;
 	}
 

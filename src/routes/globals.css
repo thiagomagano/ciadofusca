@@ -57,8 +57,8 @@
   --ff-text: "VW Text", sans-serif;
   --ff-head: "Georgia", serif;
 
-  --spacing-inline: 2rem;
-  --spacing-max-w: 1248px;
+  --spacing-inline: 0;
+  --spacing-max-w: 1440px;
 }
 
 
@@ -87,18 +87,13 @@ a {
   text-decoration: none;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 45645;
-}
+
 
 main {
-  padding-inline: var(--spacing-inline);
-  padding-top: 2rem;
   max-width: var(--spacing-max-w);
   margin: 0 auto;
-  min-height: 64%;
+  padding-inline: var(--spacing-inline);
+  min-height: 90%;
 }
 
 h1,
@@ -109,7 +104,7 @@ h4 {
   color: var(--clr-primary);
   font-weight: bold;
   text-transform: uppercase;
-
+  text-wrap: balance;
 }
 
 h1 {
@@ -134,6 +129,12 @@ ul.grid-of-cards {
   gap: 1rem;
   padding-block: 2rem;
   padding-left: 0;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --spacing-inline: 1.5rem;
+  }
 }
 
 @media (max-width: 1248px) {

@@ -112,6 +112,7 @@
 		display: grid;
 		grid-template-columns: minmax(350px, 2fr) minmax(200px, 1fr);
 		gap: 2rem;
+		padding-block: 2rem;
 	}
 	div.infos {
 		display: flex;

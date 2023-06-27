@@ -100,7 +100,7 @@
 
 	ul.redes {
 		display: flex;
-		justify-content: start;
+		justify-content: flex-start;
 		align-items: center;
 		gap: 1ch;
 	}
@@ -109,6 +109,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1ch;
+	}
+	ul.atendimento li {
+		text-wrap: balance;
 	}
 
 	@media (max-width: 720px) {
