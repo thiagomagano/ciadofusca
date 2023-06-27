@@ -1,12 +1,9 @@
 <script>
-	import Carro from './Carro.svelte';
 	import scrollIntoView from '$lib/utils/scrollIntoView';
-	import sortArray from '$lib/utils/sortArrays';
 	import Destaques from './Destaques.svelte';
 
 	export let data;
 
-	const carros = sortArray(data.items);
 	const ICONE_SIZING = '40';
 </script>
 
@@ -42,14 +39,13 @@
 	</div>
 </section>
 
-<Destaques {carros} />
+<Destaques carros={data.items} />
 
 <style>
 	section.banner {
 		display: flex;
 		flex-direction: column;
 		gap: 1ch;
-		padding-top: 1rem;
 	}
 
 	div.hero-img {
@@ -61,15 +57,17 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: top;
+		object-position: 37% 100%;
 	}
 
 	div.hero-txt {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
 		gap: 5ch;
 		padding-block: 1rem;
+		padding-inline: var(--spacing-inline);
 	}
 
 	div.txt-wrapper {
@@ -139,12 +137,19 @@
 			margin-top: 0;
 		}
 		div.hero-txt {
-			align-items: center;
-			padding-bottom: 1rem;
+			flex-direction: column;
+			gap: 2ch;
 		}
-
+		div.hero-txt h1 {
+			font-size: 2rem;
+			line-height: 1.2;
+			letter-spacing: 0.1ch;
+		}
 		ul.diferenciais {
-			grid-template-columns: repeat(3, 125px);
+			grid-template-columns: repeat(3, minmax(110px, 150px));
+		}
+		div.hero-img {
+			height: 300px;
 		}
 	}
 </style>

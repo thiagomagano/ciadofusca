@@ -59,10 +59,7 @@
 		border-radius: 10px;
 		min-width: 350px;
 	}
-	div.button-wrapper {
-		display: flex;
-		gap: 1ch;
-	}
+
 	.btn {
 		border: none;
 		padding: 6px 10px;
@@ -81,5 +78,18 @@
 	.btn-outline:hover {
 		transform: scale(1.05);
 		transition: all 0.4s ease;
+	}
+
+	@media (max-width: 768px) {
+		li.card {
+			padding-inline: 0;
+			padding-bottom: 2ch;
+			padding-top: 0;
+			border-radius: 0;
+		}
+		div.capa img {
+			min-width: 250px;
+			border-radius: 0;
+		}
 	}
 </style>

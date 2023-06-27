@@ -1,30 +1,18 @@
 <script>
 	export let data;
-	const URL_API_FILES = 'http://ciadofusca.fly.dev/api/files/carros';
+
 	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
-	import { Carousel, Toast } from 'flowbite-svelte';
+	import { Toast } from 'flowbite-svelte';
+
+	import ImagesCarrousel from './ImagesCarrousel.svelte';
 
 	import DialogForm from './DialogForm.svelte';
 
 	import { slide } from 'svelte/transition';
-	import { quintOut, elasticOut } from 'svelte/easing';
-
-	export const images = [];
-
-	if (data.imagens.length > 0) {
-		data.imagens.forEach((image, index) => {
-			const carrouselImage = {
-				id: index,
-				imgurl: `${URL_API_FILES}/${data.id}/${image}`,
-				attribution: 'ciadofusca.com.br'
-			};
-			images.push(carrouselImage);
-		});
-	}
 
 	function redirecionaClienteProZap() {
 		const BASEURL = `https://api.whatsapp.com/send?`;
-		const PHONE = `5551993438767`;
+		const PHONE = `5551984167909`;
 		const BODYMSG = `Olá, gostaria de saber mais sobre este veículo que está no site: ${data.titulo} ${data.ano} ${window.location.href}`;
 		const wppApiRedirectUrl = `${BASEURL}phone=${PHONE}&text=${BODYMSG}`;
 		//window.location.href = wppApiRedirectUrl;
@@ -40,15 +28,15 @@
 </script>
 
 <section>
-	<div class="max-w-4xl">
-		<Carousel {images} showCaptions={false} showThumbs={false} divClass="h-auto" />
-	</div>
+	<ImagesCarrousel {data} />
 
 	<div class="infos">
 		<h2>{data.titulo}</h2>
 		<ul>
 			<li><strong>Ano/Modelo: </strong> {data.ano} / {data.modelo}</li>
 			<li><strong>Descrição: </strong> {@html data.descricao}</li>
+			<li><strong>Cor: </strong> {data.cor}</li>
+			<li><strong>Marca: </strong> {data.marca}</li>
 			<li class="preco">{toBRL(data.preco)}</li>
 		</ul>
 		<div class="button-group">

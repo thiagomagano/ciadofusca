@@ -18,12 +18,6 @@
 </header>
 
 <style>
-	header {
-		position: sticky;
-		top: 0;
-		z-index: 45645;
-	}
-
 	ul.menu {
 		display: flex;
 		justify-content: center;
@@ -32,6 +26,10 @@
 		gap: 1.5ch;
 	}
 	header {
+		position: sticky;
+		top: 0;
+		z-index: 45645;
+
 		background-color: var(--clr-neutral-100);
 		border-bottom: 1px solid var(--clr-primary-900);
 		padding-block: 1rem;
@@ -64,6 +62,11 @@
 		}
 		nav {
 			justify-content: center;
+		}
+	}
+	@media (max-width: 475px) {
+		header {
+			display: none;
 		}
 	}
 </style>

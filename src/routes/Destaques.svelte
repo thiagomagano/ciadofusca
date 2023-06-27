@@ -1,7 +1,10 @@
 <script>
 	import Carro from './Carro.svelte';
+	import sortArray from '$lib/utils/sortArrays';
 
 	export let carros;
+
+	carros = sortArray(carros);
 </script>
 
 <section id="destaques" class="destaques">
@@ -20,5 +23,9 @@
 		width: 100%;
 		border: 1px solid var(--clr-primary-400);
 		margin-top: 0.5rem;
+	}
+
+	section.destaques {
+		padding-inline: var(--spacing-inline);
 	}
 </style>

@@ -92,7 +92,6 @@ a {
 main {
   max-width: var(--spacing-max-w);
   margin: 0 auto;
-  padding-inline: var(--spacing-inline);
   min-height: 90%;
 }
 
@@ -149,12 +148,7 @@ ul.grid-of-cards {
   }
 
   :root {
-    --spacing-inline: 0;
-  }
-
-  main {
-    padding: 0;
-    padding-bottom: 1rem;
+    font-size: 14px
   }
 
 }
