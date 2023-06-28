@@ -39,9 +39,9 @@
 		text-align: justify;
 	}
 
-	@media scren and (max-width: 450px) {
+	@media screen and (max-width: 670px) {
 		.img-wrapper {
-			margin-inline: -1rem;
+			order: -1;
 		}
 	}
 </style>
