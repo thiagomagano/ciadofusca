@@ -1,7 +1,8 @@
 <script>
+	export let styles;
 </script>
 
-<header>
+<header class={styles ? `${styles?.bgColor} ${styles?.fontColor}` : ''}>
 	<nav>
 		<div class="logo">
 			<a href="/">
@@ -10,10 +11,12 @@
 			</a>
 		</div>
 		<ul class="menu">
-			<li><a data-sveltekit-reload href="/carros">Veículos</a></li>
-			<li><a data-sveltekit-reload href="/servicos">Serviços</a></li>
-			<li><a data-sveltekit-reload href="/sobre">Sobre</a></li>
-			<li><a data-sveltekit-reload href="/localizacao">Localização</a></li>
+			<li><a class={styles?.fontColor} data-sveltekit-reload href="/carros">Veículos</a></li>
+			<li><a class={styles?.fontColor} data-sveltekit-reload href="/servicos">Serviços</a></li>
+			<li><a class={styles?.fontColor} data-sveltekit-reload href="/sobre">Sobre</a></li>
+			<li>
+				<a class={styles?.fontColor} data-sveltekit-reload href="/localizacao">Localização</a>
+			</li>
 		</ul>
 	</nav>
 </header>
@@ -30,7 +33,7 @@
 		padding-block: 0.5rem;
 		width: 100%;
 		padding-inline: var(--spacing-inline);
-		background-color: var(--clr-primary);
+		/* background-color: var(--clr-primary); */
 	}
 	nav {
 		display: flex;
@@ -49,7 +52,7 @@
 
 	li a {
 		text-transform: uppercase;
-		color: var(--clr-neutral-100);
+		/* color: var(--clr-neutral-100); */
 	}
 
 	@media screen and (max-width: 475px) {

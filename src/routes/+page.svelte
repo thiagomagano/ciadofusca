@@ -9,6 +9,7 @@
 </script>
 
 <section class="banner">
+	<Header styles={{ fontColor: 'text-white', bgColor: 'bg-transparent' }} />
 	<div class="hero-txt">
 		<h1>BEM-VINDO A CIA DO FUSCA</h1>
 		<p>Somos uma loja física especializada em carros clássicos.</p>
@@ -34,8 +35,6 @@
 		</div>
 	</div>
 </section>
-
-<Header />
 
 <Destaques carros={data.items} />
 

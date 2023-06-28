@@ -2,6 +2,6 @@
 	import Header from '../Header.svelte';
 </script>
 
-<Header />
+<Header styles={{ fontColor: 'text-white', bgColor: 'bg-primary-950' }} />
 
 <slot />
