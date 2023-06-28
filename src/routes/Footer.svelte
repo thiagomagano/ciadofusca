@@ -74,6 +74,8 @@
 		max-width: var(--spacing-max-w);
 		margin: 0 auto;
 		padding-inline: var(--spacing-inline);
+		min-height: 200px;
+		align-items: center;
 	}
 	section {
 		display: flex;

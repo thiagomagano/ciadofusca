@@ -7,7 +7,7 @@
 	carros = sortArray(carros);
 </script>
 
-<section id="destaques" class="destaques">
+<section id="destaques" class="destaques wrapper">
 	<h2>Destaques (+)</h2>
 	<hr />
 
@@ -24,10 +24,7 @@
 		border: 1px solid var(--clr-primary-400);
 		margin-top: 0.5rem;
 	}
-
-	section.destaques {
-		padding-inline: var(--spacing-inline);
-		margin: 0 auto;
-		max-width: var(--spacing-max-w);
+	section {
+		padding-top: 1rem;
 	}
 </style>

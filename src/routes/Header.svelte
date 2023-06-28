@@ -1,3 +1,6 @@
+<script>
+</script>
+
 <header>
 	<nav>
 		<div class="logo">
@@ -26,7 +29,7 @@
 		gap: 1.5ch;
 	}
 	header {
-		padding-block: 0.2rem;
+		padding-block: 0.5rem;
 		width: 100%;
 		padding-inline: var(--spacing-inline);
 		background-color: var(--clr-neutral-100);

@@ -66,7 +66,6 @@
 		font-size: 3rem;
 		line-height: 1.3;
 		letter-spacing: 0.1ch;
-		font-family: 'Georgia', serif;
 		text-align: center;
 		color: var(--clr-primary-900);
 		padding: 0.5rem;
