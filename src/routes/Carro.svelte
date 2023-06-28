@@ -1,6 +1,6 @@
 <script>
 	export let car;
-	const URL_API_FILES = 'http://ciadofusca.fly.dev/api/files/carros';
+	const URL_API_FILES = 'https://ciadofusca.fly.dev/api/files/carros';
 	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
 </script>
 
