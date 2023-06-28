@@ -1,6 +1,7 @@
 <script>
 	import scrollIntoView from '$lib/utils/scrollIntoView';
 	import Destaques from './Destaques.svelte';
+	import Header from './Header.svelte';
 
 	export let data;
 
@@ -34,6 +35,8 @@
 	</div>
 </section>
 
+<Header />
+
 <Destaques carros={data.items} />
 
 <style>
@@ -42,15 +45,16 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		gap: 1ch;
-		background-image: url('/assets/images/banner/cf_fachada.png');
-		background-size: cover;
-		background-color: var(--clr-neutral-700);
-		height: 700px;
-		background-blend-mode: overlay;
 		align-items: center;
 		justify-content: center;
 		width: 100%;
+		height: 700px;
 		color: var(--clr-primary-900);
+		background-image: url('/assets/images/banner/cf_fachada.png');
+		background-size: cover;
+		background-color: var(--clr-neutral-700);
+		background-blend-mode: overlay;
+		background-position: center center;
 	}
 
 	div.hero-txt {
@@ -122,6 +126,8 @@
 			justify-content: center;
 			text-align: center;
 			margin-top: 0;
+			height: 650px;
+			background-position: 39% center;
 		}
 		div.hero-txt {
 			flex-direction: column;

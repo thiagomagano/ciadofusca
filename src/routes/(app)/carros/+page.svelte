@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import Carro from '../Carro.svelte';
+	import Carro from '../../Carro.svelte';
 </script>
 
 <section class="wrapper">

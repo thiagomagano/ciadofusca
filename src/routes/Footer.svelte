@@ -4,6 +4,26 @@
 <footer>
 	<div class="info-rodape">
 		<section>
+			<h5 class="icone-wrapper"><iconify-icon icon="ic:baseline-plus" /> Mais informações</h5>
+			<ul>
+				<li>
+					<a href="/"> Home </a>
+				</li>
+				<li>
+					<a href="/carros"> Carros </a>
+				</li>
+				<li>
+					<a href="/servicos">Serviços </a>
+				</li>
+				<li>
+					<a href="/sobre">Sobre </a>
+				</li>
+				<li>
+					<a href="/localizacao">Localização </a>
+				</li>
+			</ul>
+		</section>
+		<section>
 			<h5 class="icone-wrapper">
 				<iconify-icon icon="material-symbols:chat-outline" width="26" heigth="26" /> Atendimento
 			</h5>
@@ -69,13 +89,14 @@
 
 	div.info-rodape {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		justify-content: baseline;
 		gap: 1rem;
 		max-width: var(--spacing-max-w);
 		margin: 0 auto;
 		padding-inline: var(--spacing-inline);
 		min-height: 200px;
-		align-items: center;
+		align-items: base;
 	}
 	section {
 		display: flex;
@@ -114,6 +135,10 @@
 	}
 	ul.atendimento li {
 		text-wrap: balance;
+	}
+
+	ul li a:hover {
+		text-decoration: underline;
 	}
 
 	@media (max-width: 720px) {

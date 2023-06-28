@@ -5,7 +5,7 @@
 	<nav>
 		<div class="logo">
 			<a href="/">
-				<img src="/assets/images/logos/logo-blue.png" alt="Logo cia do fusca" />
+				<img src="/assets/images/logos/logo-white.png" alt="Logo cia do fusca" />
 				<span class="logo">Cia do Fusca</span>
 			</a>
 		</div>
@@ -31,9 +31,7 @@
 		padding-block: 0.5rem;
 		width: 100%;
 		padding-inline: var(--spacing-inline);
-		background-color: var(--clr-neutral-100);
-		color: var(--clr-neutral-800);
-		border-bottom: 1px solid var(--clr-neutral-200);
+		background-color: var(--clr-primary);
 	}
 	nav {
 		display: flex;
@@ -41,10 +39,9 @@
 		align-items: center;
 		max-width: var(--spacing-max-w);
 		margin: 0 auto;
-		font-size: 0.7rem;
 	}
 	div.logo {
-		width: 90px;
+		width: 120px;
 		min-width: 80px;
 	}
 	span.logo {
@@ -53,10 +50,10 @@
 
 	li a {
 		text-transform: uppercase;
-		color: var(--clr-neutral-800);
+		color: var(--clr-neutral-100);
 	}
 
-	/* @media (max-width: 720px) {
+	@media screen and (max-width: 475px) {
 		ul.menu {
 			display: none;
 		}
@@ -64,9 +61,4 @@
 			justify-content: center;
 		}
 	}
-	@media (max-width: 475px) {
-		header {
-			display: none;
-		}
-	} */
 </style>
