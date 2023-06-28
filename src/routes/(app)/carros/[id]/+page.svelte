@@ -31,6 +31,7 @@
 	{#if data.vendido}
 		<div class="vendido">
 			<span>Vendido</span>
+			<img src="/assets/images/utils/selo_vendido.png" alt="Selo de vendido" />
 		</div>
 	{/if}
 	<ImagesCarrousel {data} />
@@ -176,16 +177,22 @@
 	.vendido {
 		position: absolute;
 		top: 10%;
-		left: 50px;
-		background-color: red;
+		left: 120px;
+		/* background-color: red; */
 		color: #fff;
 		font-weight: 700;
 		display: block;
-		width: 60%;
+		width: 50%;
 		text-align: center;
-		/* height: 100%; */
-		opacity: 0.9;
+		opacity: 0.8;
 		z-index: 4564564;
+	}
+	.vendido span {
+		display: none;
+	}
+	.vendido img {
+		width: 100%;
+		height: 100%;
 	}
 	.infos {
 		position: relative;

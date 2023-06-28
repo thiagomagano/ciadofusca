@@ -9,6 +9,7 @@
 		{#if car.vendido}
 			<div class="vendido">
 				<span>VENDIDO</span>
+				<img src="/assets/images/utils/selo_vendido.png" alt="Selo de vendido" />
 			</div>
 		{/if}
 		<div class="capa">
@@ -88,15 +89,19 @@
 
 	.vendido {
 		position: absolute;
-		bottom: 69%;
-		left: -10%;
-		background-color: red;
-		font-weight: 700;
-		display: block;
-		width: 120%;
-		rotate: 35deg;
+		top: 10%;
+		right: 15%;
+		width: 70%;
 		opacity: 0.9;
 		border-radius: 4px;
+	}
+
+	.vendido span {
+		display: none;
+	}
+	.vendido img {
+		width: 100%;
+		height: 100%;
 	}
 
 	@media (max-width: 768px) {
