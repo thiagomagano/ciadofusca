@@ -10,8 +10,7 @@
 			</a>
 		</div>
 		<ul class="menu">
-			<li><a href="/">Home</a></li>
-			<li><a href="/carros">Carros</a></li>
+			<li><a href="/carros">Veículos</a></li>
 			<li><a href="/servicos">Serviços</a></li>
 			<li><a href="/sobre">Sobre</a></li>
 			<li><a href="/localizacao">Localização</a></li>
@@ -34,6 +33,7 @@
 		padding-inline: var(--spacing-inline);
 		background-color: var(--clr-neutral-100);
 		color: var(--clr-neutral-800);
+		border-bottom: 1px solid var(--clr-neutral-200);
 	}
 	nav {
 		display: flex;

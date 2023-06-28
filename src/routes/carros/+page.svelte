@@ -4,7 +4,7 @@
 </script>
 
 <section class="wrapper">
-	<h1>Confira nossos Veículos disponiveis</h1>
+	<h2>Confira nossos Veículos</h2>
 	<ul class="grid-of-cards">
 		{#each data.items as car}
 			<Carro {car} />
