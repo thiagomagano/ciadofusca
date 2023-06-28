@@ -6,6 +6,11 @@
 
 <a data-sveltekit-reload href={`/carros/${car.id}`}>
 	<li class="card">
+		{#if car.vendido}
+			<div class="vendido">
+				<span>VENDIDO</span>
+			</div>
+		{/if}
 		<div class="capa">
 			{#if car.capa}
 				<img src={`${URL_API_FILES}/${car.id}/${car.capa}`} alt={car.titulo} />
@@ -79,6 +84,19 @@
 	.btn-outline:hover {
 		transform: scale(1.05);
 		transition: all 0.4s ease;
+	}
+
+	.vendido {
+		position: absolute;
+		bottom: 69%;
+		left: -10%;
+		background-color: red;
+		font-weight: 700;
+		display: block;
+		width: 120%;
+		rotate: 35deg;
+		opacity: 0.9;
+		border-radius: 4px;
 	}
 
 	@media (max-width: 768px) {

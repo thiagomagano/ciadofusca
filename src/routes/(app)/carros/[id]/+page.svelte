@@ -28,6 +28,11 @@
 </script>
 
 <section class="wrapper">
+	{#if data.vendido}
+		<div class="vendido">
+			<span>Vendido</span>
+		</div>
+	{/if}
 	<ImagesCarrousel {data} />
 
 	<div class="infos">
@@ -40,11 +45,15 @@
 			<li class="preco">{toBRL(data.preco)}</li>
 		</ul>
 		<div class="button-group">
-			<button class="zap" on:click={redirecionaClienteProZap} target="_blank"
+			<button
+				class="zap"
+				on:click={redirecionaClienteProZap}
+				target="_blank"
+				disabled={data.vendido}
 				><iconify-icon icon="ic:outline-whatsapp" /> Fale com o vendedor
 			</button>
 			{#if !form?.success}
-				<button on:click={() => (isOpen = true)} class="interesse"
+				<button on:click={() => (isOpen = true)} class="interesse" disabled={data.vendido}
 					><iconify-icon icon="game-icons:car-key" /> Registre seu Interesse
 				</button>
 			{/if}
@@ -101,6 +110,7 @@
 		grid-template-columns: minmax(350px, 2fr) minmax(200px, 1fr);
 		gap: 2rem;
 		padding-block: 2rem;
+		position: relative;
 	}
 	div.infos {
 		display: flex;
@@ -161,5 +171,23 @@
 		div.infos {
 			padding-inline: 0.5rem;
 		}
+	}
+
+	.vendido {
+		position: absolute;
+		top: 10%;
+		left: 50px;
+		background-color: red;
+		color: #fff;
+		font-weight: 700;
+		display: block;
+		width: 60%;
+		text-align: center;
+		/* height: 100%; */
+		opacity: 0.9;
+		z-index: 4564564;
+	}
+	.infos {
+		position: relative;
 	}
 </style>
