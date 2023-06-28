@@ -80,6 +80,7 @@ body {
   background-color: var(--clr-neutral-100);
   font-family: var(--ff-text);
   min-height: 100%;
+  position: relative;
 }
 
 a {
@@ -90,9 +91,18 @@ a {
 
 
 main {
+  /* max-width: var(--spacing-max-w); */
+  /* margin: 0 auto; */
+  min-height: 90%;
+  width: 100%;
+}
+
+.wrapper {
   max-width: var(--spacing-max-w);
   margin: 0 auto;
   min-height: 90%;
+  width: 100%;
+  padding: 2rem;
 }
 
 h1,

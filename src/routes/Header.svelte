@@ -7,7 +7,7 @@
 			</a>
 		</div>
 		<ul class="menu">
-			<!-- <li><a href="/">Home</a></li> -->
+			<li><a href="/">Home</a></li>
 			<li><a href="/carros">Carros</a></li>
 			<li><a href="/servicos">Serviços</a></li>
 			<li><a href="/sobre">Sobre</a></li>
@@ -26,15 +26,11 @@
 		gap: 1.5ch;
 	}
 	header {
-		position: sticky;
-		top: 0;
-		z-index: 45645;
-
-		background-color: var(--clr-neutral-100);
-		border-bottom: 1px solid var(--clr-primary-900);
-		padding-block: 1rem;
+		padding-block: 0.2rem;
 		width: 100%;
 		padding-inline: var(--spacing-inline);
+		background-color: var(--clr-neutral-100);
+		color: var(--clr-neutral-800);
 	}
 	nav {
 		display: flex;
@@ -42,10 +38,11 @@
 		align-items: center;
 		max-width: var(--spacing-max-w);
 		margin: 0 auto;
+		font-size: 0.7rem;
 	}
 	div.logo {
-		width: 130px;
-		min-width: 100px;
+		width: 90px;
+		min-width: 80px;
 	}
 	span.logo {
 		display: none;
@@ -53,10 +50,10 @@
 
 	li a {
 		text-transform: uppercase;
-		color: var(--clr-primary);
+		color: var(--clr-neutral-800);
 	}
 
-	@media (max-width: 720px) {
+	/* @media (max-width: 720px) {
 		ul.menu {
 			display: none;
 		}
@@ -68,5 +65,5 @@
 		header {
 			display: none;
 		}
-	}
+	} */
 </style>

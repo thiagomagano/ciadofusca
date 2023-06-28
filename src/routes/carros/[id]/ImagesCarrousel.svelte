@@ -1,5 +1,5 @@
 <script>
-	import { CarouselTransition } from 'flowbite-svelte';
+	import { Carousel } from 'flowbite-svelte';
 
 	const URL_API_FILES = 'https://ciadofusca.fly.dev/api/files/carros';
 
@@ -20,12 +20,5 @@
 </script>
 
 <div class="max-w-4xl">
-	<CarouselTransition
-		images={imagensData}
-		transitionType="slide"
-		transitionParams={{ duration: 700, delay: 250 }}
-		showCaptions={false}
-		showThumbs={true}
-		divClass="h-auto"
-	/>
+	<Carousel images={imagensData} showCaptions={false} showThumbs={true} divClass="h-auto" />
 </div>

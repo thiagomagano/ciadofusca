@@ -17,8 +17,7 @@
 			{toBRL(car.preco)}
 		</h2>
 		<div class="button-wrapper">
-			<button class="btn btn-outline">VER DETALHES</button>
-			<!-- <button class="btn fill">COMPRE JÁ</button> -->
+			<button class="btn btn-outline">VER + DETALHES</button>
 		</div>
 	</li>
 </a>
@@ -46,17 +45,19 @@
 		justify-content: center;
 	}
 	li.card {
-		backdrop-filter: blur(16px) saturate(180%);
-		background-color: var(--clr-neutral-100);
-		border-radius: 12px;
 		border: 1px solid var(--clr-neutral-200);
-		padding: 38px;
+		border-bottom: 2px solid var(--clr-neutral-500);
+		padding-bottom: 2ch;
 		filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.04));
 		text-align: center;
 	}
 
+	li.card:hover {
+		/* transition: all 1s ease; */
+		filter: opacity(0.7);
+	}
+
 	div.capa img {
-		border-radius: 10px;
 		min-width: 350px;
 	}
 

@@ -27,7 +27,7 @@
 	export let form;
 </script>
 
-<section>
+<section class="wrapper">
 	<ImagesCarrousel {data} />
 
 	<div class="infos">

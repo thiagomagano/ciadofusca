@@ -8,20 +8,9 @@
 </script>
 
 <section class="banner">
-	<div class="hero-img">
-		<img src="/assets/images/banner/cf_fachada.png" alt="Fachada Cia do Fusca" />
-	</div>
 	<div class="hero-txt">
-		<div class="txt-wrapper">
-			<h1>BEM-VINDO A CIA DO FUSCA</h1>
-			<p>Somos uma loja física especializada em carros clássicos.</p>
-			<div class="button-group">
-				<a class="button btn-fill" on:click|preventDefault={scrollIntoView} href="#destaques"
-					>Confira nossos modelos
-				</a>
-				<a class="button btn-outline" href="/localizacao">Conheça nossa loja </a>
-			</div>
-		</div>
+		<h1>BEM-VINDO A CIA DO FUSCA</h1>
+		<p>Somos uma loja física especializada em carros clássicos.</p>
 		<ul class="diferenciais">
 			<li class="item">
 				<iconify-icon icon="bi:credit-card" width={ICONE_SIZING} heigth={ICONE_SIZING} /> Parcelamos
@@ -36,6 +25,12 @@
 				Carro Revisado e pronto pra usar
 			</li>
 		</ul>
+		<div class="button-group">
+			<a class="button btn-fill" on:click|preventDefault={scrollIntoView} href="#destaques"
+				>Confira nossos modelos
+			</a>
+			<a class="button btn-outline" href="/localizacao">Conheça nossa loja </a>
+		</div>
 	</div>
 </section>
 
@@ -44,38 +39,27 @@
 <style>
 	section.banner {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: wrap;
 		gap: 1ch;
-	}
-
-	div.hero-img {
+		background-image: url('/assets/images/banner/cf_fachada.png');
+		background-size: cover;
+		background-color: var(--clr-neutral-700);
+		height: 700px;
+		background-blend-mode: overlay;
+		align-items: center;
+		justify-content: center;
 		width: 100%;
-		height: 430px;
-	}
-
-	div.hero-img img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: 37% 100%;
+		color: var(--clr-primary-900);
 	}
 
 	div.hero-txt {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: 5ch;
-		padding-block: 1rem;
-		padding-inline: var(--spacing-inline);
-	}
-
-	div.txt-wrapper {
-		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
-		gap: 2ch;
+		gap: 3ch;
+		padding-inline: var(--spacing-inline);
 	}
 
 	div.hero-txt h1 {
@@ -84,6 +68,9 @@
 		letter-spacing: 0.1ch;
 		font-family: 'Georgia', serif;
 		text-align: center;
+		color: var(--clr-primary-900);
+		padding: 0.5rem;
+		background-color: rgba(0, 0, 0, 0.25);
 	}
 
 	.button-group {
@@ -103,7 +90,7 @@
 		display: block;
 	}
 	.btn-outline {
-		background-color: var(--clr-neutral-100);
+		background-color: transparent;
 		color: var(--clr-VW-light);
 		border: 1px solid var(--clr-VW-light);
 	}
@@ -112,7 +99,7 @@
 		display: grid;
 		grid-template-columns: repeat(3, 175px);
 		gap: 2ch;
-		color: var(--clr-primary);
+		color: var(--clr-primary-900);
 	}
 	li.item {
 		border: 1px solid var(--clr-primary-900);
@@ -126,6 +113,7 @@
 		gap: 1ch;
 		text-align: center;
 		text-transform: uppercase;
+		background-color: rgba(0, 0, 0, 0.25);
 	}
 
 	@media (max-width: 800px) {
@@ -147,9 +135,6 @@
 		}
 		ul.diferenciais {
 			grid-template-columns: repeat(3, minmax(110px, 150px));
-		}
-		div.hero-img {
-			height: 300px;
 		}
 	}
 </style>

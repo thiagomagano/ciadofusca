@@ -27,5 +27,7 @@
 
 	section.destaques {
 		padding-inline: var(--spacing-inline);
+		margin: 0 auto;
+		max-width: var(--spacing-max-w);
 	}
 </style>
