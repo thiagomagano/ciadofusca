@@ -2,7 +2,7 @@
 	function redirecionaClienteProZap() {
 		const BASEURL = `https://api.whatsapp.com/send?`;
 		const PHONE = `555133448970`;
-		const BODYMSG = `Olá, visitando seu site me interessei pelos serviços que vocês oferecem. Gostaria de saber mais sobre eles.`;
+		const BODYMSG = `Olá, navegando pelo seu site me interessei pelos seus serviços. Gostaria de saber mais sobre eles.`;
 		const wppApiRedirectUrl = `${BASEURL}phone=${PHONE}&text=${BODYMSG}`;
 		//window.location.href = wppApiRedirectUrl;
 
