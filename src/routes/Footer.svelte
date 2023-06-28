@@ -7,19 +7,19 @@
 			<h5 class="icone-wrapper"><iconify-icon icon="ic:baseline-plus" /> Mais informações</h5>
 			<ul>
 				<li>
-					<a href="/"> Home </a>
+					<a data-sveltekit-reload href="/"> Home </a>
 				</li>
 				<li>
-					<a href="/carros"> Carros </a>
+					<a data-sveltekit-reload href="/carros"> Carros </a>
 				</li>
 				<li>
-					<a href="/servicos">Serviços </a>
+					<a data-sveltekit-reload href="/servicos">Serviços </a>
 				</li>
 				<li>
-					<a href="/sobre">Sobre </a>
+					<a data-sveltekit-reload href="/sobre">Sobre </a>
 				</li>
 				<li>
-					<a href="/localizacao">Localização </a>
+					<a data-sveltekit-reload href="/localizacao">Localização </a>
 				</li>
 			</ul>
 		</section>

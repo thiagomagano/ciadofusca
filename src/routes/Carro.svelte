@@ -4,7 +4,7 @@
 	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
 </script>
 
-<a href={`/carros/${car.id}`}>
+<a data-sveltekit-reload href={`/carros/${car.id}`}>
 	<li class="card">
 		<div class="capa">
 			{#if car.capa}

@@ -10,11 +10,10 @@
 			</a>
 		</div>
 		<ul class="menu">
-			<li><a href="/carros">Veículos</a></li>
-			<li><a href="/servicos">Serviços</a></li>
-			<li><a href="/sobre">Sobre</a></li>
-			<li><a href="/localizacao">Localização</a></li>
-			<li><a href="/contato">Contato</a></li>
+			<li><a data-sveltekit-reload href="/carros">Veículos</a></li>
+			<li><a data-sveltekit-reload href="/servicos">Serviços</a></li>
+			<li><a data-sveltekit-reload href="/sobre">Sobre</a></li>
+			<li><a data-sveltekit-reload href="/localizacao">Localização</a></li>
 		</ul>
 	</nav>
 </header>
