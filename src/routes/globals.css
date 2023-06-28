@@ -72,8 +72,7 @@ a {
 
 
 main {
-  /* max-width: var(--spacing-max-w); */
-  /* margin: 0 auto; */
+  min-height: 100%;
   width: 100%;
 }
 
@@ -143,7 +142,6 @@ ul.grid-of-cards {
     min-height: 90%;
     width: 100%;
     padding-inline: 1rem; 
-  
   }
   :root {
     --spacing-inline: 1rem;
