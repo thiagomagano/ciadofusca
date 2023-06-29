@@ -42,11 +42,11 @@
 	<meta property="og:image" content={getImagesFromPB('carros', data.id, data.capa, true)} />
 
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="@ciadofusca" />
+	<meta name="twitter:site" content="ciadofusca.com.br" />
 	<meta name="twitter:title" content={data.titulo} />
 	<meta
 		name="twitter:description"
-		content={`Venha conhecer esse maravilho ${data.titulo}, ela está a venda só aqui na Cia do Fusca. `}
+		content={`Venha conhecer esse maravilho ${data.titulo}, a venda só aqui na Cia do Fusca. `}
 	/>
 
 	<meta name="twitter:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
@@ -69,10 +69,6 @@
 			<li><strong>Descrição: </strong> {@html data.descricao}</li>
 			<li><strong>Cor: </strong> {data.cor}</li>
 			<li><strong>Marca: </strong> {data.marca}</li>
-			<li>
-				<strong>Marca: </strong>
-				<img src={getImagesFromPB('carros', data.id, data.capa, true)} alt="" srcset="" />
-			</li>
 			<li class="preco">{toBRL(data.preco)}</li>
 		</ul>
 		<div class="button-group">

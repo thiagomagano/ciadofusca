@@ -8,7 +8,7 @@
 	<li class="card">
 		<div class="capa">
 			{#if car.capa}
-				<img src={getImagesFromPB('carros', car.id, car.capa, false)} alt={car.titulo} />
+				<img src={getImagesFromPB('carros', car.id, car.capa, true)} alt={car.titulo} />
 			{/if}
 			{#if car.vendido}
 				<div class="vendido">

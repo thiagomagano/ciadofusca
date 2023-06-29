@@ -10,6 +10,28 @@
 
 <svelte:head>
 	<title>Cia do Fusca | Inicio</title>
+	<meta
+		name="description"
+		content="Quer comprar um Fusca? Aqui é o lugar certo. A Cia do Fusca é uma loja de carros clássicos de Porto Alegre. Venha nos visitar para conhecer nossos modelos lindos e nostalgicos."
+	/>
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://www.ciadofusca.com.br/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Cia do Fusca | Inicio" />
+	<meta property="og:description" content="Quer comprar um Fusca? Aqui é o lugar certo." />
+	<meta property="og:image" content="/assets/images/banner/cf_fachada.png" />
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="ciadofusca.com.br" />
+	<meta property="twitter:url" content="https://www.ciadofusca.com.br/" />
+	<meta name="twitter:title" content="Cia do Fusca | Inicio" />
+	<meta
+		name="twitter:description"
+		content="Quer comprar um Fusca? Aqui é o lugar certo. A Cia do Fusca é uma loja de carros clássicos de Porto Alegre. Venha nos visitar para conhecer nossos modelos lindos e nostalgicos."
+	/>
+	<meta name="twitter:image" content="/assets/images/banner/cf_fachada.png" />
 </svelte:head>
 
 <section class="banner">
