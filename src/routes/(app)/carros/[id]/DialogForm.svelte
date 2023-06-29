@@ -23,6 +23,6 @@
 			<Input type="email" name="email" placeholder="fulano@gmail.com" />
 		</Label>
 
-		<Button type="submit" class="w-full1">Registrar</Button>
+		<Button type="submit" class="w-full1 bg-primary-50 hover:bg-primary-300">Registrar</Button>
 	</form>
 </Modal>

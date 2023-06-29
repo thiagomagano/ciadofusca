@@ -24,8 +24,8 @@
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="twitter:domain" content="ciadofusca.com.br" />
-	<meta property="twitter:url" content="https://www.ciadofusca.com.br/" />
+	<meta name="twitter:domain" content="ciadofusca.com.br" />
+	<meta name="twitter:url" content="https://www.ciadofusca.com.br/" />
 	<meta name="twitter:title" content="Cia do Fusca | Inicio" />
 	<meta
 		name="twitter:description"
