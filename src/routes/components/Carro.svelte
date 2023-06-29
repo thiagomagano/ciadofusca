@@ -1,6 +1,6 @@
 <script>
 	export let car;
-	const URL_API_FILES = 'https://ciadofusca.fly.dev/api/files/carros';
+	import getImagesFromPB from '$lib/utils/getImagesFromPB';
 	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
 </script>
 
@@ -8,7 +8,7 @@
 	<li class="card">
 		<div class="capa">
 			{#if car.capa}
-				<img src={`${URL_API_FILES}/${car.id}/${car.capa}`} alt={car.titulo} />
+				<img src={getImagesFromPB('carros', car.id, car.capa, false)} alt={car.titulo} />
 			{/if}
 			{#if car.vendido}
 				<div class="vendido">

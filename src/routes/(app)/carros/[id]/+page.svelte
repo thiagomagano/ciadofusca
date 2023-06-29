@@ -1,6 +1,8 @@
 <script>
 	export let data;
 
+	import getImagesFromPB from '$lib/utils/getImagesFromPB';
+
 	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
 	import { Toast } from 'flowbite-svelte';
 
@@ -29,10 +31,20 @@
 
 <svelte:head>
 	<title>Cia do Fusca | {data?.titulo}</title>
-	<meta property="og:title" content={data?.titulo} />
-	<meta property="og:type" content="page" />
+
+	<meta property="og:title" content={data.titulo} />
+	<meta
+		property="og:description"
+		content={`Venha conhecer esse maravilho ${data.titulo}, ela está a venda só aqui na Cia do Fusca. `}
+	/>
+	<meta property="og:type" content="website" />
 	<meta property="og:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
-	<meta property="og:image" content={data.capa} />
+	<meta property="og:image" content={getImagesFromPB('carros', data.id, data.capa, true)} />
+
+	<meta property="twitter:title" content={data.titulo} />
+	<meta property="twitter:type" content="website" />
+	<meta property="twitter:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
+	<meta property="twitter:image" content={getImagesFromPB('carros', data.id, data.capa, true)} />
 </svelte:head>
 
 <section class="wrapper">
@@ -51,6 +63,10 @@
 			<li><strong>Descrição: </strong> {@html data.descricao}</li>
 			<li><strong>Cor: </strong> {data.cor}</li>
 			<li><strong>Marca: </strong> {data.marca}</li>
+			<li>
+				<strong>Marca: </strong>
+				<img src={getImagesFromPB('carros', data.id, data.capa, true)} alt="" srcset="" />
+			</li>
 			<li class="preco">{toBRL(data.preco)}</li>
 		</ul>
 		<div class="button-group">

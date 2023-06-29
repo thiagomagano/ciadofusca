@@ -1,7 +1,6 @@
 <script>
 	import { Carousel } from 'flowbite-svelte';
-
-	const URL_API_FILES = 'https://ciadofusca.fly.dev/api/files/carros';
+	import getImagesFromPB from '$lib/utils/getImagesFromPB';
 
 	export let data;
 
@@ -11,8 +10,8 @@
 		data.imagens.forEach((image, index) => {
 			const carrouselImage = {
 				id: index,
-				imgurl: `${URL_API_FILES}/${data.id}/${image}`,
-				attribution: 'ciadofusca.com.br'
+				imgurl: getImagesFromPB('carros', data.id, image, true),
+				attribution: `Imagem ${index + 1} de ${data.imagens.length} do ${data.titulo}`
 			};
 			imagensData.push(carrouselImage);
 		});
