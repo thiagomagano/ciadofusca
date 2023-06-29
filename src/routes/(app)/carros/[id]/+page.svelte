@@ -41,10 +41,16 @@
 	<meta property="og:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
 	<meta property="og:image" content={getImagesFromPB('carros', data.id, data.capa, true)} />
 
-	<meta property="twitter:title" content={data.titulo} />
-	<meta property="twitter:type" content="website" />
-	<meta property="twitter:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
-	<meta property="twitter:image" content={getImagesFromPB('carros', data.id, data.capa, true)} />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@ciadofusca" />
+	<meta name="twitter:title" content={data.titulo} />
+	<meta
+		name="twitter:description"
+		content={`Venha conhecer esse maravilho ${data.titulo}, ela está a venda só aqui na Cia do Fusca. `}
+	/>
+
+	<meta name="twitter:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
+	<meta name="twitter:image" content={getImagesFromPB('carros', data.id, data.capa, true)} />
 </svelte:head>
 
 <section class="wrapper">
