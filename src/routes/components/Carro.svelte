@@ -6,15 +6,15 @@
 
 <a data-sveltekit-reload href={`/carros/${car.id}`}>
 	<li class="card">
-		{#if car.vendido}
-			<div class="vendido">
-				<span>VENDIDO</span>
-				<img src="/assets/images/utils/selo_vendido.png" alt="Selo de vendido" />
-			</div>
-		{/if}
 		<div class="capa">
 			{#if car.capa}
 				<img src={`${URL_API_FILES}/${car.id}/${car.capa}`} alt={car.titulo} />
+			{/if}
+			{#if car.vendido}
+				<div class="vendido">
+					<span>VENDIDO</span>
+					<img src="/assets/images/utils/selo_vendido.png" alt="Selo de vendido" />
+				</div>
 			{/if}
 		</div>
 		<h2>{car.titulo}</h2>
@@ -59,8 +59,11 @@
 	}
 
 	li.card:hover {
-		/* transition: all 1s ease; */
 		filter: opacity(0.7);
+	}
+
+	div.capa {
+		position: relative;
 	}
 
 	div.capa img {
