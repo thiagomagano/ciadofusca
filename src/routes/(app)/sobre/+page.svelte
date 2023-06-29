@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Cia do Fusca | Sobre</title>
+</svelte:head>
+
 <section class="wrapper">
 	<h1>Quem Somos</h1>
 	<hr />

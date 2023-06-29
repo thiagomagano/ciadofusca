@@ -2,6 +2,10 @@
 	import { PUBLIC_GOOGLE_MAPS_API } from '$env/static/public';
 </script>
 
+<svelte:head>
+	<title>Cia do Fusca | Localização</title>
+</svelte:head>
+
 <section class="wrapper">
 	<h1>Localização</h1>
 	<hr />

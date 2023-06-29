@@ -27,6 +27,10 @@
 	export let form;
 </script>
 
+<svelte:head>
+	<title>Cia do Fusca | {data?.titulo}</title>
+</svelte:head>
+
 <section class="wrapper">
 	{#if data.vendido}
 		<div class="vendido">

@@ -13,6 +13,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Cia do Fusca | Serviços</title>
+</svelte:head>
+
 <section class="wrapper">
 	<div class="title">
 		<h1>Serviços</h1>

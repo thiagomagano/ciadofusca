@@ -3,6 +3,10 @@
 	import Carro from '/src/routes/components/Carro.svelte';
 </script>
 
+<svelte:head>
+	<title>Veículos | Cia do Fusca</title>
+</svelte:head>
+
 <section class="wrapper">
 	<h1>Veículos</h1>
 	<hr />

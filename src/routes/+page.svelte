@@ -8,6 +8,10 @@
 	const ICONE_SIZING = '40';
 </script>
 
+<svelte:head>
+	<title>Cia do Fusca | Inicio</title>
+</svelte:head>
+
 <section class="banner">
 	<Header styles={{ fontColor: 'text-white', bgColor: 'bg-transparent' }} />
 	<div class="hero-txt">
