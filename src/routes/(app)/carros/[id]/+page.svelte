@@ -29,6 +29,10 @@
 
 <svelte:head>
 	<title>Cia do Fusca | {data?.titulo}</title>
+	<meta property="og:title" content={data?.titulo} />
+	<meta property="og:type" content="page" />
+	<meta property="og:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
+	<meta property="og:image" content={data.capa} />
 </svelte:head>
 
 <section class="wrapper">
