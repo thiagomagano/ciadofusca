@@ -31,7 +31,10 @@
 		name="twitter:description"
 		content="Quer comprar um Fusca? Aqui é o lugar certo. A Cia do Fusca é uma loja de carros clássicos de Porto Alegre. Venha nos visitar para conhecer nossos modelos lindos e nostalgicos."
 	/>
-	<meta name="twitter:image" content="/assets/images/banner/cf_fachada.png" />
+	<meta
+		name="twitter:image"
+		content="https://www.ciadofusca.com.br/assets/images/banner/cf_fachada_localizacao.webp"
+	/>
 </svelte:head>
 
 <section class="banner">
