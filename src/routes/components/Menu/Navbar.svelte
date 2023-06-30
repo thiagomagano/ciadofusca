@@ -30,12 +30,7 @@
 		list-style: none;
 		gap: 1.5ch;
 	}
-	header {
-		padding-block: 0.5rem;
-		width: 100%;
-		padding-inline: var(--spacing-inline);
-		/* background-color: var(--clr-primary); */
-	}
+
 	nav {
 		display: flex;
 		justify-content: space-between;

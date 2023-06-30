@@ -6,20 +6,20 @@ import { redirect } from '@sveltejs/kit';
  * @type {import('./$types').RequestHandler}
  */
 export async function POST({ request, locals }) {
-  //const { adminEmail, password } = locals.pb.auth
-  const { nome, whatsapp, email, cardId } = await request.json();
+	//const { adminEmail, password } = locals.pb.auth
+	const { nome, whatsapp, email, cardId } = await request.json();
 
-  const data = {
-    "nome": nome,
-    "whatsapp": whatsapp,
-    "email": email,
-    "idCarro": cardId
-  };
-  console.log(data);
+	const data = {
+		nome: nome,
+		whatsapp: whatsapp,
+		email: email,
+		idCarro: cardId
+	};
+	console.log(data);
 
-  const record = await locals.pb.collection('interesses').create(data);
+	const record = await locals.pb.collection('interesses').create(data);
 
-  throw redirect(403, '/home')
+	throw redirect(403, '/home');
 
-  return new Response('Success...', record);
+	return new Response('Success...', record);
 }

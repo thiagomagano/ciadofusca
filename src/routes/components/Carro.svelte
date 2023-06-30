@@ -1,14 +1,14 @@
 <script>
 	export let car;
-	import getImagesFromPB from '$lib/utils/getImagesFromPB';
-	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
+	import getUrlImagesFromPB from '$lib/utils/getUrlImagesFromPB';
+	import toBRL from '$lib/utils/toBRL';
 </script>
 
 <a data-sveltekit-reload href={`/carros/${car.id}`}>
 	<li class="card">
 		<div class="capa">
 			{#if car.capa}
-				<img src={getImagesFromPB('carros', car.id, car.capa, true)} alt={car.titulo} />
+				<img src={getUrlImagesFromPB('carros', car.id, car.capa, true)} alt={car.titulo} />
 			{/if}
 			{#if car.vendido}
 				<div class="vendido">
