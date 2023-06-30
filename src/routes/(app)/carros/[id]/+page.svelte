@@ -1,9 +1,9 @@
 <script>
 	export let data;
 
-	import getImagesFromPB from '$lib/utils/getImagesFromPB';
+	import getUrlImagesFromPB from '$lib/utils/getUrlImagesFromPB';
 
-	import { valueToBRL as toBRL } from '$lib/utils/formatMoney';
+	import toBRL from '$lib/utils/toBRL';
 
 	import ImagesCarrousel from './ImagesCarrousel.svelte';
 
@@ -24,6 +24,8 @@
 
 	let isOpen = false;
 	export let form;
+
+	console.log('brl', toBRL(10), typeof toBRL(10));
 </script>
 
 <svelte:head>
@@ -36,7 +38,7 @@
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
-	<meta property="og:image" content={getImagesFromPB('carros', data.id, data.capa, true)} />
+	<meta property="og:image" content={getUrlImagesFromPB('carros', data.id, data.capa, true)} />
 
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="ciadofusca.com.br" />
@@ -47,7 +49,7 @@
 	/>
 
 	<meta name="twitter:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
-	<meta name="twitter:image" content={getImagesFromPB('carros', data.id, data.capa, true)} />
+	<meta name="twitter:image" content={getUrlImagesFromPB('carros', data.id, data.capa, true)} />
 </svelte:head>
 
 <section class="wrapper">

@@ -1,6 +1,6 @@
 <script>
 	import { Carousel } from 'flowbite-svelte';
-	import getImagesFromPB from '$lib/utils/getImagesFromPB';
+	import getUrlImagesFromPB from '$lib/utils/getUrlImagesFromPB';
 
 	export let data;
 
@@ -10,7 +10,7 @@
 		data.imagens.forEach((image, index) => {
 			const carrouselImage = {
 				id: index,
-				imgurl: getImagesFromPB('carros', data.id, image, true),
+				imgurl: getUrlImagesFromPB('carros', data.id, image, true),
 				attribution: `Imagem ${index + 1} de ${data.imagens.length} do ${data.titulo}`
 			};
 			imagensData.push(carrouselImage);
