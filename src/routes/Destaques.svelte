@@ -52,9 +52,6 @@
 
 	.button-wrap a {
 		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 	.button-wrap button {
 		width: 100%;

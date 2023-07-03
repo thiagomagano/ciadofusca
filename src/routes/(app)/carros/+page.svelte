@@ -122,4 +122,10 @@
 		border: 1px solid var(--clr-primary-600);
 		border-radius: 0.25rem;
 	}
+
+	@media screen and (max-width: 600px) {
+		div.input-group-wrapper {
+			grid-template-columns: 1fr;
+		}
+	}
 </style>
