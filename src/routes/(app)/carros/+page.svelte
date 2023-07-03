@@ -14,7 +14,6 @@
 
 	let pesquisa = '';
 	let marca = '';
-	let ano = '';
 	let decada = '';
 
 	$: pesquisaConvertida = new RegExp(pesquisa, 'i');
@@ -42,11 +41,9 @@
 	<hr />
 
 	<div class="pesquisa">
-		<h3 class="text-center">Filtros</h3>
-
 		<div class="input-group-wrapper">
 			<div class="input-group">
-				<span>Palavras-chave:</span>
+				<span>Pesquise por Palavras-chave:</span>
 				<input
 					type="text"
 					placeholder="EX: 'Fusca' 'Azul' 'Placa Preta' '1300' 'Vendido' '1970'"

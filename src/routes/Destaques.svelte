@@ -6,11 +6,7 @@
 
 	carros = sortArray(carros);
 
-	
-	
-	let carrosEmDestaque = carros.slice(0, 6)
-
-	
+	let carrosEmDestaque = carros.slice(0, 6);
 </script>
 
 <section id="destaques" class="destaques wrapper">
@@ -22,8 +18,17 @@
 			<Carro {car} />
 		{/each}
 	</ul>
-
-	<button class="btn btn-primary bg-primary-400 text-center"><a data-sveltekit-reload href="/carros">Ver todos modelos </a></button>
+	<div class="button-wrap">
+		<a data-sveltekit-reload href="/carros">
+			<button class="button btn-fill">
+				Confira todos modelos <iconify-icon
+					icon="material-symbols:arrow-circle-right-outline"
+					width="24"
+					height="24"
+				/>
+			</button>
+		</a>
+	</div>
 </section>
 
 <style>
@@ -34,5 +39,28 @@
 	}
 	section {
 		padding-top: 1rem;
+	}
+
+	.button-wrap {
+		text-align: center;
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		padding-top: 1rem;
+	}
+
+	.button-wrap a {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.button-wrap button {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5ch;
 	}
 </style>

@@ -1,5 +1,4 @@
 <script>
-	import scrollIntoView from '$lib/utils/scrollIntoView';
 	import Destaques from './Destaques.svelte';
 	import Header from './Header.svelte';
 
@@ -57,9 +56,7 @@
 			</li>
 		</ul>
 		<div class="button-group">
-			<a class="button btn-fill" on:click|preventDefault={scrollIntoView} href="#destaques"
-				>Confira nossos modelos
-			</a>
+			<a class="button btn-fill" href="/carros">Confira nossos modelos </a>
 			<a class="button btn-outline" href="/localizacao">Conheça nossa loja </a>
 		</div>
 	</div>
@@ -102,28 +99,6 @@
 		color: var(--clr-primary-900);
 		padding: 0.5rem;
 		background-color: rgba(0, 0, 0, 0.25);
-	}
-
-	.button-group {
-		display: flex;
-		gap: 1ch;
-	}
-
-	.button {
-		background-color: var(--clr-VW-light);
-		color: #fff;
-		border: none;
-		padding: 10px 20px;
-		border-radius: 5px;
-		cursor: pointer;
-		text-transform: uppercase;
-		font-weight: 600;
-		display: block;
-	}
-	.btn-outline {
-		background-color: transparent;
-		color: var(--clr-VW-light);
-		border: 1px solid var(--clr-VW-light);
 	}
 
 	ul.diferenciais {
