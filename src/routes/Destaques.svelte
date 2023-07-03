@@ -5,6 +5,12 @@
 	export let carros;
 
 	carros = sortArray(carros);
+
+	
+	
+	let carrosEmDestaque = carros.slice(0, 6)
+
+	
 </script>
 
 <section id="destaques" class="destaques wrapper">
@@ -12,10 +18,12 @@
 	<hr />
 
 	<ul class="grid-of-cards">
-		{#each carros as car}
+		{#each carrosEmDestaque as car}
 			<Carro {car} />
 		{/each}
 	</ul>
+
+	<button class="btn btn-primary bg-primary-400 text-center"><a data-sveltekit-reload href="/carros">Ver todos modelos </a></button>
 </section>
 
 <style>
