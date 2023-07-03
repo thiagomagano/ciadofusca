@@ -1,5 +1,5 @@
 <script>
-	import Carro from './components/Carro.svelte';
+	import Carro from '$lib/components/Carro.svelte';
 	import sortArray from '$lib/utils/sortArrays';
 
 	export let carros;

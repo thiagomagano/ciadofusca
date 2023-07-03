@@ -44,11 +44,12 @@
 			</h5>
 			<ul>
 				<li class="font-bold">Segunda à Sexta:</li>
-				<li>09:00h às 18:30h</li>
+				<li>09:00h às 12:30h</li>
+				<li>13:30h às 18:30h</li>
 			</ul>
 			<ul>
 				<li class="font-bold">Sábado:</li>
-				<li>09:00h às 13:00h</li>
+				<li>09:00h às 12:30h</li>
 			</ul>
 		</section>
 		<section>

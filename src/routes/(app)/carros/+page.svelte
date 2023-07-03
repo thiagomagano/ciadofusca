@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import Carro from '/src/routes/components/Carro.svelte';
+	import Carro from '$lib/components/Carro.svelte';
 </script>
 
 <svelte:head>

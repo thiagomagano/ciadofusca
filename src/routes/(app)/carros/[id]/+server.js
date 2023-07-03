@@ -15,7 +15,6 @@ export async function POST({ request, locals }) {
 		email: email,
 		idCarro: cardId
 	};
-	console.log(data);
 
 	const record = await locals.pb.collection('interesses').create(data);
 

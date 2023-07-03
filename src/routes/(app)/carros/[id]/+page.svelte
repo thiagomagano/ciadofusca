@@ -25,7 +25,7 @@
 	let isOpen = false;
 	export let form;
 
-	console.log('brl', toBRL(10), typeof toBRL(10));
+	
 </script>
 
 <svelte:head>
