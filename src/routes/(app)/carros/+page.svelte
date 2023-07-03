@@ -1,6 +1,13 @@
 <script>
 	export let data;
 	import Carro from '$lib/components/Carro.svelte';
+
+	let pesquisa = ''
+
+
+	$: pesquisaConvertida = new RegExp(pesquisa, "i")
+	$: carrosFiltrados = data.items.filter((car) => car.titulo.match(pesquisaConvertida))
+	
 </script>
 
 <svelte:head>
@@ -10,8 +17,13 @@
 <section class="wrapper">
 	<h1>Veículos</h1>
 	<hr />
+
+	<div class="pesquisa">
+		<span>Filtra pelo nome do carro desejado:</span>
+		<input type="text" placeholder="Pesquise Aqui..." bind:value= {pesquisa}>
+	</div>
 	<ul class="grid-of-cards">
-		{#each data.items as car}
+		{#each carrosFiltrados as car}
 			<Carro {car} />
 		{/each}
 	</ul>
