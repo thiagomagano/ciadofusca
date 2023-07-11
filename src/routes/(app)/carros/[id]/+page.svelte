@@ -20,6 +20,8 @@
 		link.href = wppApiRedirectUrl;
 		link.target = '_blank';
 		link.click();
+
+    
 	}
 
 	let isOpen = false;
