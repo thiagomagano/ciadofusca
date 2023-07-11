@@ -75,8 +75,9 @@
 <div class="dev-rodape">
 	<p>
 		Desenvolvido por <a
-			class=" text-neutral-300 font-semibold hover:underline"
-			href="https://linkedin.com/in/thiagomagano"
+			class=" text-primary-800 font-semibold hover:underline"
+			href="http://thiagomagano.site"
+			target="_blank"
 			>Thiago Magano
 		</a> © 2023 Cia Do Fusca. Todos os Direitos Reservados.
 	</p>
