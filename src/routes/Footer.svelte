@@ -73,7 +73,13 @@
 	</div>
 </footer>
 <div class="dev-rodape">
-	Desenvolvido por Thiago Magano © 2023 Cia Do Fusca. Todos os Direitos Reservados.
+	<p>
+		Desenvolvido por <a
+			class=" text-neutral-300 font-semibold hover:underline"
+			href="https://linkedin.com/in/thiagomagano"
+			>Thiago Magano
+		</a> © 2023 Cia Do Fusca. Todos os Direitos Reservados.
+	</p>
 </div>
 
 <style>
