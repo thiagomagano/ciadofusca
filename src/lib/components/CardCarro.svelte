@@ -56,7 +56,6 @@
 		filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.04));
 		text-align: center;
 		background-color: var(--clr-neutral-100);
-		transition: all 0.9s ease;
 	}
 
 	li.card:hover {
