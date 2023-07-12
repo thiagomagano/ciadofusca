@@ -161,7 +161,8 @@
 		}
 
 		li.item {
-			font-size: 0.52rem;
+			font-size: 0.65rem;
+			padding: 1ch;
 		}
 	}
 </style>
