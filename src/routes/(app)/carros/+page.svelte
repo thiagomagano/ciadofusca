@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import Carro from '$lib/components/Carro.svelte';
+	import Carro from '$lib/components/CardCarro.svelte';
 
 	//TODO: Refatorar este código utilizando Svelte Stores;
 	let carros = data.carros;

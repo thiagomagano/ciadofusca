@@ -1,5 +1,5 @@
 <script>
-	import Carro from '$lib/components/Carro.svelte';
+	import Carro from '$lib/components/CardCarro.svelte';
 	import sortArray from '$lib/utils/sortArrays';
 	import sortByData from '$lib/utils/sortByData';
 
