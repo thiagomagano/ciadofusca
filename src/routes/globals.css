@@ -70,15 +70,15 @@ a {
 main {
 	min-height: 100%;
 	width: 100%;
+	min-height: 65.5vh;
+	padding-bottom: 1rem;
 }
 
 .wrapper {
 	max-width: var(--spacing-max-w);
 	margin: 0 auto;
-	min-height: 65.5vh;
 	width: 100%;
 	padding-inline: var(--spacing-inline);
-	padding-bottom: 2rem;
 }
 
 h1,

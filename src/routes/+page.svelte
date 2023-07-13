@@ -2,15 +2,15 @@
 	import Header from '$lib/components/Header.svelte';
 	import ListaCarros from '$lib/components/ListaCarros.svelte';
 
+	import sortArray from '$lib/utils/sortArrays';
+	import sortByData from '$lib/utils/sortByData';
+
 	export let data;
 
 	let cars = data.cars;
 
-	cars = sortArray(cars);
-
-	let carrosEmDestaque = [...cars.slice(0, 3)];
-
-	let ultimosCarros = sortByData(cars, 'created');
+	let destaques = sortArray(cars).slice(0, 6);
+	let novidades = sortByData(cars, 'created');
 
 	const ICONE_SIZING = '40';
 </script>
@@ -70,8 +70,20 @@
 	</div>
 </section>
 
-<ListaCarros carros={cars} titulo="Destaques" />
-<ListaCarros carros={cars} titulo="Novidades" />
+<ListaCarros carros={novidades} titulo="Novidades" />
+<ListaCarros carros={destaques} titulo="Destaques" />
+
+<div class="button-wrap wrapper">
+	<a data-sveltekit-reload href="/carros">
+		<button class="button btn-fill">
+			Confira todos modelos <iconify-icon
+				icon="material-symbols:arrow-circle-right-outline"
+				width="24"
+				height="24"
+			/>
+		</button>
+	</a>
+</div>
 
 <style>
 	section.banner {
@@ -129,6 +141,22 @@
 		text-align: center;
 		text-transform: uppercase;
 		background-color: rgba(0, 0, 0, 0.25);
+	}
+
+	.button-wrap {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-block: 1rem;
+	}
+
+	.button-wrap button {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5ch;
 	}
 
 	@media (max-width: 800px) {

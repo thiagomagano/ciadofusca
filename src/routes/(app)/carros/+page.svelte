@@ -1,35 +1,46 @@
 <script>
 	export let data;
 	import Carro from '$lib/components/CardCarro.svelte';
+	import { createSearchStore, searchHandler } from '$lib/stores/search';
+	import { onDestroy } from 'svelte';
 
 	//@TODO: Refatorar este código utilizando Svelte Stores;
 	let carros = data.carros;
 
 	const carrosPesquisa = carros.map((car) => ({
 		...car,
-		palavrasChave: `${car.titulo} ${car.marca} ${car.modelo} ${car.ano} ${car.descricao} ${
-			car.cor
-		} ${car.vendido ? 'vendido' : ''}`
+		searchTerms: `
+        ${car.titulo} ${car.marca} ${car.modelo} ${car.ano} ${car.descricao} 
+        ${car.cor} ${car.vendido ? 'vendido' : ''}
+      `
 	}));
 
-	let pesquisa = '';
-	let marca = '';
-	let decada = '';
+	const searchStore = createSearchStore(carrosPesquisa);
 
-	$: pesquisaConvertida = new RegExp(pesquisa, 'i');
-	$: decadaConvertida = new RegExp(decada, 'i');
+	const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
 
-	$: carrosFiltrados = carrosPesquisa.filter((car) => car.palavrasChave.match(pesquisaConvertida));
-	$: carrosFiltradosMarca = carrosFiltrados.filter((car) =>
-		marca ? car.marca.includes(marca) : car
-	);
+	onDestroy(() => {
+		unsubscribe();
+	});
 
-	$: carrosFiltradosDecada = carrosFiltradosMarca.filter((car) =>
-		car.modelo.match(decadaConvertida)
-	);
+	// let pesquisa = '';
+	// let marca = '';
+	// let decada = '';
 
-	let todasMarcas = carros.map((car) => car.marca);
-	let marcasUnicas = [...new Set(todasMarcas)];
+	// $: pesquisaConvertida = new RegExp(pesquisa, 'i');
+	// $: decadaConvertida = new RegExp(decada, 'i');
+
+	// $: carrosFiltrados = carrosPesquisa.filter((car) => car.palavrasChave.match(pesquisaConvertida));
+	// $: carrosFiltradosMarca = carrosFiltrados.filter((car) =>
+	// 	marca ? car.marca.includes(marca) : car
+	// );
+
+	// $: carrosFiltradosDecada = carrosFiltradosMarca.filter((car) =>
+	// 	car.modelo.match(decadaConvertida)
+	// );
+
+	// let todasMarcas = carros.map((car) => car.marca);
+	// let marcasUnicas = [...new Set(todasMarcas)];
 </script>
 
 <svelte:head>
@@ -47,10 +58,10 @@
 				<input
 					type="text"
 					placeholder="EX: 'Fusca' 'Azul' 'Placa Preta' '1300' 'Vendido' '1970'"
-					bind:value={pesquisa}
+					bind:value={$searchStore.search}
 				/>
 			</div>
-			<div class="input-group">
+			<!-- <div class="input-group">
 				<span>Marca</span>
 				<select name="marcas" id="marcas" bind:value={marca}>
 					<option value="" selected>Todas</option>
@@ -77,12 +88,14 @@
 
 	{#if carrosFiltradosDecada.length === 0}
 		<h2 class="text-center mt-8">Nenhum carro encontrado</h2>
-	{/if}
-	<ul class="grid-of-cards">
-		{#each carrosFiltradosDecada as car}
-			<Carro {car} />
-		{/each}
-	</ul>
+	{/if} -->
+			<ul class="grid-of-cards">
+				{#each $searchStore.filtered as car}
+					<Carro {car} />
+				{/each}
+			</ul>
+		</div>
+	</div>
 </section>
 
 <style>

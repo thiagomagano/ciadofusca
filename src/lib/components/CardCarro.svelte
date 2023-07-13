@@ -4,8 +4,8 @@
 	import toBRL from '$lib/utils/toBRL';
 </script>
 
-<li class="card">
-	<a data-sveltekit-reload href="/carros/{car.id}">
+<a data-sveltekit-reload href="/carros/{car.id}">
+	<li class="card">
 		<div class="capa">
 			{#if car.capa}
 				<img src={getUrlImagesFromPB('carros', car.id, car.capa, true)} alt={car.titulo} />
@@ -17,16 +17,18 @@
 				</div>
 			{/if}
 		</div>
-		<h2>{car.titulo}</h2>
-		<p>{car.ano}/{car.modelo}</p>
+		<div>
+			<h2>{car.titulo}</h2>
+			<p>{car.ano}/{car.modelo}</p>
+		</div>
 		<h2 class="preco">
 			{toBRL(car.preco)}
 		</h2>
 		<div class="button-wrapper">
 			<button class="btn btn-outline">VER + DETALHES</button>
 		</div>
-	</a>
-</li>
+	</li>
+</a>
 
 <style>
 	h2 {
@@ -47,7 +49,7 @@
 		list-style: none;
 		display: flex;
 		flex-direction: column;
-		gap: 1ch;
+		gap: 0.5rem;
 		align-items: center;
 		justify-content: center;
 		border: 1px solid var(--clr-neutral-200);
