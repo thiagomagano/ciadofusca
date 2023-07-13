@@ -1,6 +1,6 @@
 <script>
 	export let data;
-	import Carro from '$lib/components/Carro.svelte';
+	import Carro from '$lib/components/CardCarro.svelte';
 
 	//@TODO: Refatorar este código utilizando Svelte Stores;
 	let carros = data.carros;
@@ -121,5 +121,11 @@
 		padding: 0.5rem;
 		border: 1px solid var(--clr-primary-600);
 		border-radius: 0.25rem;
+	}
+
+	@media screen and (max-width: 600px) {
+		div.input-group-wrapper {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

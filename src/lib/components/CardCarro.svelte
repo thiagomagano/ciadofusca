@@ -25,8 +25,8 @@
 		<div class="button-wrapper">
 			<button class="btn btn-outline">VER + DETALHES</button>
 		</div>
-	</li>
-</a>
+	</a>
+</li>
 
 <style>
 	h2 {
@@ -42,6 +42,7 @@
 	p {
 		color: var(--clr-neutral-400);
 	}
+
 	li.card {
 		list-style: none;
 		display: flex;
@@ -49,17 +50,16 @@
 		gap: 1ch;
 		align-items: center;
 		justify-content: center;
-	}
-	li.card {
 		border: 1px solid var(--clr-neutral-200);
-		border-bottom: 2px solid var(--clr-neutral-500);
+		border-bottom: 1px solid var(--clr-neutral-400);
 		padding-bottom: 2ch;
 		filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.04));
 		text-align: center;
+		background-color: var(--clr-neutral-100);
 	}
 
 	li.card:hover {
-		filter: opacity(0.7);
+		filter: opacity(0.8);
 	}
 
 	div.capa {
@@ -80,7 +80,7 @@
 
 	.btn-outline {
 		background: var(--clr-neutral-100);
-		color: var(--clr-primary-400);
+		color: var(--clr-primary-100);
 		border: 1px solid var(--clr-primary-400);
 		transition: all 0.3s ease;
 	}

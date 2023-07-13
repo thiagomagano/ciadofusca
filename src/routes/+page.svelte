@@ -154,4 +154,24 @@
 			grid-template-columns: repeat(3, minmax(110px, 150px));
 		}
 	}
+
+	@media (max-width: 475px) {
+		section.banner {
+			height: 550px;
+			background-position: 39% center;
+		}
+		div.hero-txt h1 {
+			font-size: 1.5rem;
+			line-height: 1.2;
+			letter-spacing: 0.1ch;
+		}
+		ul.diferenciais {
+			grid-template-columns: repeat(3, minmax(90px, 150px));
+		}
+
+		li.item {
+			font-size: 0.65rem;
+			padding: 1ch;
+		}
+	}
 </style>
