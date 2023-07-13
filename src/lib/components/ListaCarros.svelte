@@ -1,15 +1,27 @@
 <script>
-	import Carro from '$lib/components/Carro.svelte';
+	import Carro from '$lib/components/CardCarro.svelte';
 	import sortArray from '$lib/utils/sortArrays';
+	import sortByData from '$lib/utils/sortByData';
 
 	export let carros;
+	export let titulo;
 
 	carros = sortArray(carros);
 
-	let carrosEmDestaque = carros.slice(0, 6);
+	let carrosEmDestaque = [...carros.slice(0, 3)];
+
+	let ultimosCarros = sortByData(carros, 'created');
 </script>
 
 <section id="destaques" class="destaques wrapper">
+	<h2>Novidades (+)</h2>
+	<hr />
+	<ul class="grid-of-cards">
+		{#each ultimosCarros as car}
+			<Carro {car} />
+		{/each}
+	</ul>
+
 	<h2>Destaques (+)</h2>
 	<hr />
 
@@ -18,6 +30,7 @@
 			<Carro {car} />
 		{/each}
 	</ul>
+
 	<div class="button-wrap">
 		<a data-sveltekit-reload href="/carros">
 			<button class="button btn-fill">
@@ -52,9 +65,6 @@
 
 	.button-wrap a {
 		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 	.button-wrap button {
 		width: 100%;
