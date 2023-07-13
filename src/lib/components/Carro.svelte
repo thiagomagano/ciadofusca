@@ -4,8 +4,8 @@
 	import toBRL from '$lib/utils/toBRL';
 </script>
 
-<a data-sveltekit-reload href={`/carros/${car.id}`}>
-	<li class="card">
+<li class="card">
+	<a data-sveltekit-reload href="/carros/{car.id}">
 		<div class="capa">
 			{#if car.capa}
 				<img src={getUrlImagesFromPB('carros', car.id, car.capa, true)} alt={car.titulo} />

@@ -1,12 +1,16 @@
 import { error } from '@sveltejs/kit';
 import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
+//import { data } from '$lib/stores';
 
-export async function load({ fetch, params }) {
-	const response = await fetch(`${PUBLIC_POCKETBASE_URL}/api/collections/carros/records`);
-	const jsonData = await response.json();
+export async function load({ fetch }) {
+  const response = await fetch(`${PUBLIC_POCKETBASE_URL}/api/collections/carros/records`);
+  const data = await response.json();
 
-	if (jsonData) {
-		return jsonData;
-	}
-	throw error(404, 'Not found');
+  if (data) {
+    return {
+      cars: data.items,
+      carsTotal: data.totalItems,
+    }
+  }
+  throw error(404, 'Not found');
 }

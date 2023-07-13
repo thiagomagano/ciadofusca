@@ -1,8 +1,17 @@
 <script>
-	import Destaques from './Destaques.svelte';
-	import Header from './Header.svelte';
+	import Destaques from '$lib/components/Destaques.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import ListaCarros from '../lib/components/ListaCarros.svelte';
 
 	export let data;
+
+	let cars = data.cars;
+
+	carros = sortArray(carros);
+
+	let carrosEmDestaque = [...carros.slice(0, 3)];
+
+	let ultimosCarros = sortByData(carros, 'created');
 
 	const ICONE_SIZING = '40';
 </script>
@@ -62,7 +71,8 @@
 	</div>
 </section>
 
-<Destaques carros={data.items} />
+<ListaCarros carros={cars} titulo="Destaques" />
+<ListaCarros carros={cars} titulo="Novidades (+)" />
 
 <style>
 	section.banner {
