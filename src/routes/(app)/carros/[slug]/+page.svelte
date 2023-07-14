@@ -7,7 +7,7 @@
 
 	import ImagesCarrousel from './ImagesCarrousel.svelte';
 
-	import DialogForm from './DialogForm.svelte';
+	// import DialogForm from './DialogForm.svelte';
 
 	function redirecionaClienteProZap() {
 		const BASEURL = `https://api.whatsapp.com/send?`;
@@ -20,14 +20,10 @@
 		link.href = wppApiRedirectUrl;
 		link.target = '_blank';
 		link.click();
-
-    
 	}
 
 	let isOpen = false;
 	export let form;
-
-	
 </script>
 
 <svelte:head>
@@ -88,7 +84,7 @@
 		</div>
 	</div>
 
-	<DialogForm bind:isOpen carro={data} bind:form />
+	<!-- <DialogForm bind:isOpen carro={data} bind:form /> -->
 </section>
 
 <style>

@@ -1,5 +1,5 @@
 <script>
-	import { Carousel } from 'flowbite-svelte';
+	// import { Carousel } from 'flowbite-svelte';
 	import getUrlImagesFromPB from '$lib/utils/getUrlImagesFromPB';
 
 	export let data;
@@ -19,5 +19,5 @@
 </script>
 
 <div class="max-w-4xl">
-	<Carousel images={imagensData} showCaptions={false} showThumbs={true} divClass="h-auto" />
+	<!-- <Carousel images={imagensData} showCaptions={false} showThumbs={true} divClass="h-auto" /> -->
 </div>
