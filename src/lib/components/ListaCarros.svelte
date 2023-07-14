@@ -3,17 +3,34 @@
 
 	export let carros;
 	export let titulo;
+
+	let elemCarousel;
+
+	function carouselRight() {
+		const x =
+			elemCarousel.scrollLeft === elemCarousel.scrollWidth - elemCarousel.clientWidth
+				? 0 // loop
+				: elemCarousel.scrollLeft + elemCarousel.clientWidth; // step right
+		elemCarousel.scroll(x, 0);
+	}
 </script>
 
-<section class="wrapper">
+<section class="wrapper relative">
 	<h2>{titulo}</h2>
-	<hr />
-
-	<ul class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto py-4">
+	<div
+		bind:this={elemCarousel}
+		class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto py-4 justify-baseline items-center"
+	>
+		<!-- //TODO - aicionar o botão de scroll -->
 		{#each carros as car}
 			<Carro {car} />
 		{/each}
-	</ul>
+		<button
+			type="button"
+			class="btn-icon variant-filled absolute -right-12 w-1 bg-transparent md:w-8 md:variant-filled"
+			on:click={carouselRight}
+		/>
+	</div>
 </section>
 
 <style>

@@ -1,3 +1,10 @@
+@font-face {
+	/* Reference name */
+	font-family: 'Abril Fatface';
+	/* For multiple files use commas, ex: url(), url(), ... */
+	src: url('/fonts/AbrilFatface-Regular.ttf');
+}
+
 :root {
 	--clr-primary: #02407e;
 
@@ -31,8 +38,11 @@
 	--clr-neutral-200: hsl(0, 5%, 90%);
 	--clr-neutral-100: hsl(0, 0%, 100%);
 
-	--ff-text: 'DM Sans', sans-serif;
-	--ff-head: 'DM Serif Display', serif;
+	/* --ff-text: 'DM Sans', sans-serif;
+	--ff-head: 'DM Serif Display', serif; */
+
+	--theme-font-family-base: 'Abril Fatface', sans-serif;
+	--theme-font-family-heading: 'Abril Fatface', sans-serif;
 
 	--spacing-inline: 0;
 	--spacing-max-w: 1440px;
@@ -65,8 +75,6 @@ body {
 }
 
 body {
-	background-color: var(--clr-neutral-200);
-	font-family: var(--ff-text);
 	min-height: 100%;
 	position: relative;
 	font-size: clamp(0.8rem, 1vw, 1rem);
@@ -75,13 +83,6 @@ body {
 a {
 	color: var(--clr-neutral-100);
 	text-decoration: none;
-}
-
-main {
-	min-height: 100%;
-	width: 100%;
-	min-height: 65.5vh;
-	padding-bottom: 1rem;
 }
 
 .wrapper {
@@ -95,8 +96,6 @@ h1,
 h2,
 h3,
 h4 {
-	font-family: var(--ff-head);
-	color: var(--clr-primary);
 	text-transform: uppercase;
 	text-wrap: balance;
 	margin: 0;
@@ -162,21 +161,4 @@ ul.grid-of-cards {
 .button-group {
 	display: flex;
 	gap: 1ch;
-}
-
-.button {
-	background-color: var(--clr-VW-light);
-	color: #fff;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 5px;
-	cursor: pointer;
-	text-transform: uppercase;
-	font-weight: 600;
-	display: block;
-}
-.btn-outline {
-	background-color: transparent;
-	color: var(--clr-VW-light);
-	border: 1px solid var(--clr-VW-light);
 }

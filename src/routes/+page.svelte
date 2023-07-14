@@ -44,7 +44,7 @@
 	/>
 </svelte:head>
 
-<section class="banner">
+<section class="banner mb-4">
 	<Header styles={{ fontColor: 'text-white', bgColor: 'bg-transparent' }} />
 	<div class="hero-txt">
 		<h1>BEM-VINDO A CIA DO FUSCA</h1>
@@ -64,8 +64,8 @@
 			</li>
 		</ul>
 		<div class="button-group">
-			<a class="button btn-fill" href="/carros">Confira nossos modelos </a>
-			<a class="button btn-outline" href="/localizacao">Conheça nossa loja </a>
+			<a class="btn-xl variant-filled-primary" href="/carros">Confira nossos modelos </a>
+			<a class="btn-xl variant-outline-primary" href="/localizacao">Conheça nossa loja </a>
 		</div>
 	</div>
 </section>
@@ -75,7 +75,7 @@
 
 <div class="button-wrap wrapper">
 	<a data-sveltekit-reload href="/carros">
-		<button class="button btn-fill">
+		<button class="btn variant-filled-primary">
 			Confira todos modelos <iconify-icon
 				icon="material-symbols:arrow-circle-right-outline"
 				width="24"
@@ -95,7 +95,6 @@
 		justify-content: center;
 		width: 100%;
 		height: 700px;
-		color: var(--clr-primary-900);
 		background-image: url('/assets/images/banner/cf_fachada.png');
 		background-size: cover;
 		background-color: var(--clr-neutral-700);
@@ -117,19 +116,15 @@
 		line-height: 1.3;
 		letter-spacing: 0.1ch;
 		text-align: center;
-		color: var(--clr-primary-900);
 		padding: 0.5rem;
-		background-color: rgba(0, 0, 0, 0.25);
 	}
 
 	ul.diferenciais {
 		display: grid;
 		grid-template-columns: repeat(3, 175px);
 		gap: 2ch;
-		color: var(--clr-primary-900);
 	}
 	li.item {
-		border: 1px solid var(--clr-primary-900);
 		font-size: 0.85rem;
 		padding: 1rem;
 		border-radius: 1rem;
@@ -140,7 +135,7 @@
 		gap: 1ch;
 		text-align: center;
 		text-transform: uppercase;
-		background-color: rgba(0, 0, 0, 0.25);
+		background-color: rgba(0, 0, 0, 0.35);
 	}
 
 	.button-wrap {

@@ -75,7 +75,7 @@
 <div class="dev-rodape">
 	<p>
 		Desenvolvido por <a
-			class=" text-primary-800 font-semibold hover:underline"
+			class=" text-sucess hover:underline"
 			href="http://thiagomagano.site"
 			target="_blank"
 			>Thiago Magano
@@ -86,8 +86,6 @@
 <style>
 	footer {
 		padding: 1rem;
-		background-color: var(--clr-primary);
-		color: var(--clr-neutral-100);
 	}
 
 	h5 {
@@ -116,8 +114,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: var(--clr-primary-100);
-		color: var(--clr-neutral-100);
 		height: 60px;
 		text-align: center;
 	}
@@ -140,9 +136,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1ch;
-	}
-	ul.atendimento li {
-		text-wrap: balance;
 	}
 
 	ul li a:hover {

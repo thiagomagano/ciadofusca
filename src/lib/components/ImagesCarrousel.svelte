@@ -73,11 +73,11 @@
 		</button>
 	</div>
 
-	<div class="flex gap-4 overflow-auto pb-2">
+	<div class="gap-4 pb-2 hidden sm:flex">
 		{#each dataImages as image, i}
 			<button type="button" on:click={() => carouselThumbnail(i)}>
 				<img
-					class="rounded-container-token max-w-[250px] min-w-[128px]"
+					class="rounded-container-token max-w-[250px]"
 					src={image.url}
 					alt={image.attribution}
 					loading="lazy"
