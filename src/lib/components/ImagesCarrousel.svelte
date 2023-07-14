@@ -39,14 +39,21 @@
 	}
 </script>
 
-<div>
-	<div class="card p-4 grid grid-cols-[auto_1fr_auto] gap-4 items-center">
+<div class="flex gap-4 flex-col">
+	<div class="grid grid-cols-1fr items-center relative">
 		<!-- Button: Left -->
-		<button type="button" class="btn-icon variant-filled" on:click={carouselLeft}>
+		<button
+			type="button"
+			class="btn-icon variant-filled absolute left-4 w-1 bg-transparent md:w-8 md:variant-filled"
+			on:click={carouselLeft}
+		>
 			<iconify-icon icon="fa:arrow-left" />
 		</button>
 		<!-- Full Images -->
-		<div bind:this={elemCarousel} class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto">
+		<div
+			bind:this={elemCarousel}
+			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto scroll no-scrollbar"
+		>
 			{#each dataImages as image}
 				<img
 					class="snap-center w-[1024px] rounded-container-token"
@@ -57,21 +64,28 @@
 			{/each}
 		</div>
 		<!-- Button: Right -->
-		<button type="button" class="btn-icon variant-filled" on:click={carouselRight}>
+		<button
+			type="button"
+			class="btn-icon variant-filled absolute right-4 w-1 bg-transparent md:w-8 md:variant-filled"
+			on:click={carouselRight}
+		>
 			<iconify-icon icon="fa:arrow-right" />
 		</button>
 	</div>
 
-	<!-- <div class="card p-4 grid grid-cols-6 gap-4">
+	<div class="flex gap-4 overflow-auto pb-2">
 		{#each dataImages as image, i}
 			<button type="button" on:click={() => carouselThumbnail(i)}>
 				<img
-					class="rounded-container-token"
+					class="rounded-container-token max-w-[250px] min-w-[128px]"
 					src={image.url}
 					alt={image.attribution}
 					loading="lazy"
 				/>
 			</button>
 		{/each}
-	</div> -->
+	</div>
 </div>
+
+<style>
+</style>
