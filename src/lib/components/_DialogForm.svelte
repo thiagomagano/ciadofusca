@@ -2,10 +2,10 @@
 	// import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
 
 	import { enhance } from '$app/forms';
-	export let isOpen;
-	export let carro;
+	// export let isOpen;
+	// export let carro;
 
-	export let form;
+	// export let form;
 </script>
 
 <!-- <Modal bind:open={isOpen} size="xs" autoclose={false} class="w-full" outsideclose={true}>

@@ -5,7 +5,7 @@
 
 	import toBRL from '$lib/utils/toBRL';
 
-	import ImagesCarrousel from './ImagesCarrousel.svelte';
+	import ImagesCarrousel from '$lib/components/_ImagesCarrousel.svelte';
 
 	// import DialogForm from './DialogForm.svelte';
 
