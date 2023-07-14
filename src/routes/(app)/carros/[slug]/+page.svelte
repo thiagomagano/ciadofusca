@@ -5,7 +5,7 @@
 
 	import toBRL from '$lib/utils/toBRL';
 
-	import ImagesCarrousel from '$lib/components/_ImagesCarrousel.svelte';
+	import ImagesCarrousel from '$lib/components/ImagesCarrousel.svelte';
 
 	// import DialogForm from './DialogForm.svelte';
 
@@ -57,6 +57,7 @@
 			<img src="/assets/images/utils/selo_vendido.png" alt="Selo de vendido" />
 		</div>
 	{/if}
+
 	<ImagesCarrousel {data} />
 
 	<div class="infos">

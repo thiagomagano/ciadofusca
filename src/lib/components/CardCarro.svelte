@@ -5,7 +5,7 @@
 </script>
 
 <a data-sveltekit-reload href="/carros/{car.id}">
-	<li class="card">
+	<li class="card snap-start">
 		<div class="capa">
 			{#if car.capa}
 				<img src={getUrlImagesFromPB('carros', car.id, car.capa, true)} alt={car.titulo} />
@@ -49,7 +49,7 @@
 		list-style: none;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 1rem;
 		align-items: center;
 		justify-content: center;
 		border: 1px solid var(--clr-neutral-200);
@@ -94,9 +94,9 @@
 
 	.vendido {
 		position: absolute;
-		top: 10%;
-		right: 15%;
-		width: 70%;
+		top: 7%;
+		right: 40%;
+		width: 60%;
 		opacity: 0.9;
 		border-radius: 4px;
 	}

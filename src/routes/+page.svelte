@@ -9,8 +9,8 @@
 
 	let cars = data.cars;
 
-	let destaques = sortArray(cars).slice(0, 6);
-	let novidades = sortByData(cars, 'created');
+	let destaques = sortArray(cars).slice(0, 5);
+	let novidades = sortByData(cars, 'created').reverse().slice(0, 5);
 
 	const ICONE_SIZING = '40';
 </script>

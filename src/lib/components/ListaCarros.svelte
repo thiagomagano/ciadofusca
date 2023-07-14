@@ -8,7 +8,8 @@
 <section class="wrapper">
 	<h2>{titulo}</h2>
 	<hr />
-	<ul class="grid-of-cards">
+
+	<ul class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto py-4">
 		{#each carros as car}
 			<Carro {car} />
 		{/each}

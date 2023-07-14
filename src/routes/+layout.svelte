@@ -8,8 +8,6 @@
 	// Finally, your application's global stylesheet (sometimes labeled 'app.css')
 	import '../app.postcss';
 
-	import '../app.postcss';
-	import './globals.css';
 	import Footer from '$lib/components/Footer.svelte';
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
