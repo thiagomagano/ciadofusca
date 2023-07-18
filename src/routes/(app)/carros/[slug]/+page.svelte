@@ -67,7 +67,7 @@
 			<li><strong>Descrição: </strong> {@html data.descricao}</li>
 			<li><strong>Cor: </strong> {data.cor}</li>
 			<li><strong>Marca: </strong> {data.marca}</li>
-			<li class="preco">{toBRL(data.preco)}</li>
+			<li class="preco money">{toBRL(data.preco)}</li>
 		</ul>
 		<div class="button-group">
 			<button

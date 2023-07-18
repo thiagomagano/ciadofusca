@@ -85,14 +85,15 @@
 		{#if termoPesquisado !== ''}
 			<div class="flex justify-between items-center gap-8">
 				<p class="text-center">
-					Pesquisando por: <span class="font-bold italic"> "{termoPesquisado.toUpperCase()}"</span>
+					Pesquisando por: <span class="font-bold italic capitalize"> "{termoPesquisado}"</span>
 				</p>
 				<p>
 					<span class="font-bold"> {results === 0 ? 'nenhum' : results}</span>
 					{results > 1 ? 'carros encontrados' : 'carro encontrado'}
 				</p>
-				<button class="btn variant-filled-warning" on:click={() => ($searchStore.search = '')}
-					>Limpar pesquisa</button
+				<button
+					class="btn-sm rounded-full variant-filled-warning"
+					on:click={() => ($searchStore.search = '')}>Limpar</button
 				>
 			</div>
 		{/if}
