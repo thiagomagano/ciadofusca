@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<footer>
+<footer class="border-t-2 border-surface-800">
 	<div class="info-rodape">
 		<section>
 			<h5 class="icone-wrapper"><iconify-icon icon="ic:baseline-plus" /> Mais informações</h5>

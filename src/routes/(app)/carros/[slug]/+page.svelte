@@ -54,113 +54,116 @@
 	<meta name="twitter:image" content={getUrlImagesFromPB('carros', data.id, data.capa, true)} />
 </svelte:head>
 
-<section class="wrapper">
+<section class="wrapper py-4">
 	{#if data.vendido}
 		<div class="vendido">
 			<span>Vendido</span>
 			<img src="/assets/images/utils/selo_vendido.png" alt="Selo de vendido" />
 		</div>
 	{/if}
+	<h1 class="h1 text-center md:pb-4">{data.titulo}</h1>
+	<div class="car">
+		<ImagesCarrousel {data} />
 
-	<ImagesCarrousel {data} />
+		<div class="infos">
+			<ul>
+				<li><strong>Versão: </strong> <span>{data.titulo}</span></li>
+				<li><strong>Marca: </strong> <span>{data.marca}</span></li>
+				<li><strong>Ano/Modelo: </strong> <span>{data.ano} / {data.modelo}</span></li>
+				<li><strong>Descrição: </strong> <span>{@html data.descricao}</span></li>
+				<li><strong>Cor: </strong> <span>{data.cor}</span></li>
+				<li class="money text-primary-500 h2">{toBRL(data.preco)}</li>
+			</ul>
+			<div class="button-group">
+				<button
+					class="zap"
+					on:click={redirecionaClienteProZap}
+					target="_blank"
+					disabled={data.vendido}
+					><iconify-icon icon="ic:outline-whatsapp" /> Fale com o vendedor
+				</button>
+				{#if !form?.success}
+					<Accordion>
+						<AccordionItem>
+							<svelte:fragment slot="lead"
+								><iconify-icon icon="game-icons:car-key" /></svelte:fragment
+							>
+							<svelte:fragment slot="summary">Faça uma proposta</svelte:fragment>
+							<svelte:fragment slot="content">
+								<form class="flex flex-col space-y-6" method="POST" use:enhance>
+									<p class="text-sm">
+										Que bom que você tem interesse na nossa relíquia! Para realizar a sua proposta,
+										preencha os campos abaixo e clique no botão "enviar"!
+									</p>
 
-	<div class="infos">
-		<h2>{data.titulo}</h2>
-		<ul>
-			<li><strong>Ano/Modelo: </strong> {data.ano} / {data.modelo}</li>
-			<li><strong>Descrição: </strong> {@html data.descricao}</li>
-			<li><strong>Cor: </strong> {data.cor}</li>
-			<li><strong>Marca: </strong> {data.marca}</li>
-			<li class="preco money">{toBRL(data.preco)}</li>
-		</ul>
-		<div class="button-group">
-			<button
-				class="zap"
-				on:click={redirecionaClienteProZap}
-				target="_blank"
-				disabled={data.vendido}
-				><iconify-icon icon="ic:outline-whatsapp" /> Fale com o vendedor
-			</button>
-			{#if !form?.success}
-				<Accordion>
-					<AccordionItem>
-						<svelte:fragment slot="lead"><iconify-icon icon="game-icons:car-key" /></svelte:fragment
-						>
-						<svelte:fragment slot="summary">Faça uma proposta</svelte:fragment>
-						<svelte:fragment slot="content">
-							<form class="flex flex-col space-y-6" method="POST" use:enhance>
-								<p class="text-sm">
-									Que bom que você tem interesse na nossa relíquia! Para realizar a sua proposta,
-									preencha os campos abaixo e clique no botão "enviar"!
-								</p>
+									<label class="label"
+										><span> Nome: </span>
+										<input class="input" type="text" name="nome" placeholder="Fulano da silva" />
+										{#if form?.missingName}
+											<p class="text-red-500">{form?.msg}</p>
+										{/if}
+									</label>
+									<label class="label">
+										<span>Whatsapp: </span>
+										<input type="text" class="input" name="whatsapp" placeholder="5199999999" />
+										{#if form?.missingWpp}
+											<p class="text-red-500">{form?.msg}</p>
+										{/if}
+									</label>
+									<label class="label">
+										<span> Email (opcional): </span>
+										<input class="input" type="email" name="email" placeholder="fulano@email.com" />
+									</label>
+									<label class="label flex align-center">
+										<span>Veículo na troca? </span>
+										<input class="checkbox ml-4" type="checkbox" name="troca" />
+									</label>
+									<label class="label"
+										><span>Qual é a sua proposta? </span>
+										<textarea
+											class="textarea"
+											type="textarea"
+											name="proposta"
+											placeholder="Tenho tal carro na troca no valor R$ mil, mais o resto em 12x"
+											rows="4"
+										/>
+										{#if form?.missingProposta}
+											<p class="text-red-500">{form?.msg}</p>
+										{/if}
+									</label>
 
-								<label class="label"
-									><span> Nome: </span>
-									<input class="input" type="text" name="nome" placeholder="Fulano da silva" />
-									{#if form?.missingName}
-										<p class="text-red-500">{form?.msg}</p>
-									{/if}
-								</label>
-								<label class="label">
-									<span>Whatsapp: </span>
-									<input type="text" class="input" name="whatsapp" placeholder="5199999999" />
-									{#if form?.missingWpp}
-										<p class="text-red-500">{form?.msg}</p>
-									{/if}
-								</label>
-								<label class="label">
-									<span> Email (opcional): </span>
-									<input class="input" type="email" name="email" placeholder="fulano@email.com" />
-								</label>
-								<label class="label flex align-center">
-									<span>Veículo na troca? </span>
-									<input class="checkbox ml-4" type="checkbox" name="troca" />
-								</label>
-								<label class="label"
-									><span>Qual é a sua proposta? </span>
-									<textarea
-										class="textarea"
-										type="textarea"
-										name="proposta"
-										placeholder="Tenho tal carro na troca no valor R$ mil, mais o resto em 12x"
-										rows="4"
-									/>
-									{#if form?.missingProposta}
-										<p class="text-red-500">{form?.msg}</p>
-									{/if}
-								</label>
-
-								<button type="submit" class="w-full1 bg-primary-500 hover:bg-primary-700"
-									>Enviar</button
-								>
-							</form>
-						</svelte:fragment>
-					</AccordionItem>
-				</Accordion>
-			{:else}
-				<aside class="alert variant-outline-success">
-					<!-- Icon -->
-					<div><iconify-icon icon="clarity:success-standard-line" width="24" /></div>
-					<!-- Message -->
-					<div class="alert-message">
-						<h3 class="h3">sucesso!</h3>
-						<p>{form?.msg}</p>
-					</div>
-					<!-- Actions -->
-				</aside>
-			{/if}
+									<button type="submit" class="w-full1 bg-primary-500 hover:bg-primary-700"
+										>Enviar</button
+									>
+								</form>
+							</svelte:fragment>
+						</AccordionItem>
+					</Accordion>
+				{:else}
+					<aside class="alert variant-outline-success">
+						<!-- Icon -->
+						<div><iconify-icon icon="clarity:success-standard-line" width="24" /></div>
+						<!-- Message -->
+						<div class="alert-message">
+							<h3 class="h3">sucesso!</h3>
+							<p>{form?.msg}</p>
+						</div>
+						<!-- Actions -->
+					</aside>
+				{/if}
+			</div>
 		</div>
 	</div>
 </section>
 
 <style>
-	section {
+	div.car {
 		display: grid;
 		grid-template-columns: minmax(350px, 2fr) minmax(200px, 1fr);
 		gap: 2rem;
-		padding-block: 2rem;
 		position: relative;
 	}
+
 	div.infos {
 		display: flex;
 		flex-direction: column;
@@ -171,17 +174,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1ch;
-	}
-
-	ul li {
-		border-bottom: 1px solid var(--clr-neutral-300);
-		padding-bottom: 0.2rem;
-		line-height: 2;
-	}
-
-	ul li.preco {
-		font-size: 2rem;
-		color: var(--clr-VW-green);
+		justify-content: space-between;
 	}
 
 	div.button-group {
@@ -208,7 +201,7 @@
 	}
 
 	@media (max-width: 720px) {
-		section {
+		div.car {
 			grid-template-columns: minmax(320px, 2fr);
 			gap: 1ch;
 		}

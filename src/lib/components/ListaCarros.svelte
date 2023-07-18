@@ -19,7 +19,7 @@
 </script>
 
 <section class="wrapper relative pt-8">
-	<h2 class="pb-4">{titulo}</h2>
+	<h2 class="h2 pb-4 text-center border-b-2 border-surface-800">{titulo}</h2>
 	<div
 		bind:this={elemCarousel}
 		class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto py-4 justify-baseline items-center"
