@@ -22,7 +22,7 @@
 	</div>
 	<div>
 		<h2 class="text-2xl">{car.titulo}</h2>
-		<p class="text-sm">{car.ano}/{car.modelo}</p>
+		<p class="text-sm text-slate-400">{car.ano}/{car.modelo}</p>
 	</div>
 
 	<p class="text-3xl text-primary-500">

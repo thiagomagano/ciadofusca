@@ -24,7 +24,6 @@
 		bind:this={elemCarousel}
 		class="snap-x scroll-px-4 snap-mandatory scroll-smooth flex gap-4 overflow-x-auto py-4 justify-baseline items-center"
 	>
-		<!-- //TODO - aicionar o botão de scroll -->
 		{#each carros as car}
 			<Carro {car} />
 		{/each}
@@ -34,7 +33,7 @@
 				<iconify-icon icon="material-symbols:arrow-right-alt-rounded" width="32" />
 			</button>
 		{:else}
-			<button type="button" class="btn absolute -right-10 w-0 lg:w-8" on:click={carouselRight}>
+			<button type="button" class="btn absolute -left-10 w-0 lg:w-8" on:click={carouselRight}>
 				<iconify-icon icon="material-symbols:arrow-left-alt-rounded" width="32" />
 			</button>
 		{/if}
