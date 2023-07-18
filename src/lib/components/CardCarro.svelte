@@ -25,7 +25,7 @@
 		<p class="text-sm text-slate-400">{car.ano}/{car.modelo}</p>
 	</div>
 
-	<p class="text-3xl text-primary-500">
+	<p class="text-3xl text-primary-500 money">
 		{toBRL(car.preco)}
 	</p>
 	<div class="button-wrapper">
@@ -35,12 +35,6 @@
 
 <style>
 	@media (max-width: 768px) {
-		li.card {
-			padding-inline: 0;
-			padding-bottom: 2ch;
-			padding-top: 0;
-			border-radius: 0;
-		}
 		div.capa img {
 			min-width: 250px;
 			border-radius: 0;

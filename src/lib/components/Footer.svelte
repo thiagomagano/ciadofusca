@@ -43,12 +43,12 @@
 				<iconify-icon icon="icon-park-outline:time" width="26" heigth="26" /> Horário de Atendimento
 			</h5>
 			<ul>
-				<li class="font-bold">Segunda à Sexta:</li>
+				<li>Segunda à Sexta:</li>
 				<li>09:00h às 12:30h</li>
 				<li>13:30h às 18:30h</li>
 			</ul>
 			<ul>
-				<li class="font-bold">Sábado:</li>
+				<li>Sábado:</li>
 				<li>09:00h às 12:30h</li>
 			</ul>
 		</section>
@@ -90,7 +90,6 @@
 
 	h5 {
 		font-size: 1.2rem;
-		font-weight: bold;
 	}
 
 	div.info-rodape {

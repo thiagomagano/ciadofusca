@@ -41,8 +41,11 @@
 	/* --ff-text: 'DM Sans', sans-serif;
 	--ff-head: 'DM Serif Display', serif; */
 
-	--theme-font-family-base: 'Abril Fatface', sans-serif;
-	--theme-font-family-heading: 'Abril Fatface', sans-serif;
+	/* --theme-font-family-base: 'Abril Fatface', sans-serif;
+	--theme-font-family-heading: 'Abril Fatface', sans-serif; */
+
+	--theme-font-family-base: 'DM Sans', sans-serif;
+	--theme-font-family-heading: 'DM Serif Display', serif;
 
 	--spacing-inline: 0;
 	--spacing-max-w: 1440px;
@@ -99,6 +102,7 @@ h4 {
 	text-transform: uppercase;
 	text-wrap: balance;
 	margin: 0;
+	font-family: var(--theme-font-family-heading);
 }
 
 h1 {
@@ -115,6 +119,10 @@ h3 {
 
 img {
 	width: 100%;
+}
+
+.money {
+	font-family: var(--theme-font-family-heading);
 }
 
 ul.grid-of-cards {

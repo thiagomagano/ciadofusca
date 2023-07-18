@@ -4,6 +4,8 @@
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
 	import { onDestroy } from 'svelte';
 
+	import { InputChip } from '@skeletonlabs/skeleton';
+
 	//@TODO: Refatorar este código utilizando Svelte Stores;
 	let carros = data.carros;
 
@@ -23,6 +25,8 @@
 		unsubscribe();
 	});
 
+	let searchValue = '';
+
 	// let pesquisa = '';
 	// let marca = '';
 	// let decada = '';
@@ -41,104 +45,62 @@
 
 	// let todasMarcas = carros.map((car) => car.marca);
 	// let marcasUnicas = [...new Set(todasMarcas)];
+
+	function addFilter(filter) {
+		if (filter) {
+			$searchStore.search = filter;
+			termoPesquisado = filter;
+			searchValue = '';
+		}
+	}
+
+	$: termoPesquisado = $searchStore.search;
+	$: results = $searchStore.filtered.length;
 </script>
 
 <svelte:head>
 	<title>Veículos | Cia do Fusca</title>
 </svelte:head>
 
-<section class="wrapper">
-	<h1>Veículos</h1>
-	<hr />
+<section class="wrapper py-12">
+	<h1 class="pb-12 text-center">Veículos</h1>
 
-	<div class="pesquisa">
-		<div class="input-group-wrapper">
-			<div class="input-group">
-				<span>Pesquise por Palavras-chave:</span>
-				<input
-					type="text"
-					placeholder="EX: 'Fusca' 'Azul' 'Placa Preta' '1300' 'Vendido' '1970'"
-					bind:value={$searchStore.search}
-				/>
-			</div>
-			<!-- <div class="input-group">
-				<span>Marca</span>
-				<select name="marcas" id="marcas" bind:value={marca}>
-					<option value="" selected>Todas</option>
-					{#each marcasUnicas as marca}
-						<option value={marca}>{marca}</option>
-					{/each}
-				</select>
-			</div>
-			<div class="input-group">
-				<span>Década</span>
-				<select name="ano" id="ano" bind:value={decada}>
-					<option value="" selected>Todos</option>
-					<option value="195">50's</option>
-					<option value="196">60's</option>
-					<option value="197">70's</option>
-					<option value="198">80's</option>
-					<option value="199">90's</option>
-					<option value="200">00's</option>
-				</select>
-			</div>
+	<div class="flex flex-col gap-4">
+		<div class="input-group input-group-divider grid-cols-[auto_1fr_auto]">
+			<div class="input-group-shim"><iconify-icon icon="fa:search" /></div>
+			<input
+				type="search"
+				placeholder="Pesquisar... ex: 'Fusca' 'Azul' 'Placa Preta' '1300' 'Vendido' '1970'"
+				bind:value={searchValue}
+				on:keypress={(e) => {
+					if (e.key === 'Enter') {
+						addFilter(searchValue);
+					}
+				}}
+			/>
+			<button class="variant-filled-primary" on:click={() => addFilter(searchValue)}
+				>Pesquisar</button
+			>
 		</div>
-		<hr />
-	</div>
+		{#if termoPesquisado !== ''}
+			<div class="flex justify-between items-center gap-8">
+				<p class="text-center">
+					Pesquisando por: <span class="font-bold italic"> "{termoPesquisado.toUpperCase()}"</span>
+				</p>
+				<p>
+					<span class="font-bold"> {results === 0 ? 'nenhum' : results}</span>
+					{results > 1 ? 'carros encontrados' : 'carro encontrado'}
+				</p>
+				<button class="btn variant-filled-warning" on:click={() => ($searchStore.search = '')}
+					>Limpar pesquisa</button
+				>
+			</div>
+		{/if}
 
-	{#if carrosFiltradosDecada.length === 0}
-		<h2 class="text-center mt-8">Nenhum carro encontrado</h2>
-	{/if} -->
-			<ul class="grid-of-cards">
-				{#each $searchStore.filtered as car}
-					<Carro {car} />
-				{/each}
-			</ul>
-		</div>
+		<ul class="grid-of-cards">
+			{#each $searchStore.filtered as car}
+				<Carro {car} />
+			{/each}
+		</ul>
 	</div>
 </section>
-
-<style>
-	hr {
-		margin-bottom: 1rem;
-		border-top: 1px solid var(--clr-primary-600);
-	}
-	h1 {
-		text-align: center;
-	}
-
-	div.pesquisa {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		gap: 1rem;
-	}
-
-	div.input-group-wrapper {
-		display: grid;
-		grid-template-columns: 2fr 1fr 1fr;
-		gap: 2rem;
-	}
-
-	div.input-group {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-	div.input-group span {
-		font-weight: bold;
-	}
-
-	div.input-group input {
-		width: 100%;
-		padding: 0.5rem;
-		border: 1px solid var(--clr-primary-600);
-		border-radius: 0.25rem;
-	}
-
-	@media screen and (max-width: 600px) {
-		div.input-group-wrapper {
-			grid-template-columns: 1fr;
-		}
-	}
-</style>

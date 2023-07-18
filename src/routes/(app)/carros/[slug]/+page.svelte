@@ -117,7 +117,6 @@
 	ul li.preco {
 		font-size: 2rem;
 		color: var(--clr-VW-green);
-		font-weight: bold;
 	}
 
 	div.button-group {
