@@ -22,14 +22,19 @@ export const actions = {
     const nome = data.get('nome');
     const whatsapp = data.get('whatsapp');
     const email = data.get('email');
+    const troca = data.get('troca');
+    const proposta = data.get('proposta');
 
     const whatsappRegex = new RegExp(/^(?:\+|00)?(?:55)?(?:\(?0?\d{2}\)?)?[9]?\d{4}[-.]?\d{4}$/);
 
     if (!nome) {
-      return fail(400, { missingName: true, msg: 'O campo Nome é obrigatórios' });
+      return fail(400, { missingName: true, msg: 'O campo Nome é obrigatório' });
     }
     if (!whatsapp) {
-      return fail(400, { missingWpp: true, msg: 'O campo Whatsapp obrigatórios' });
+      return fail(400, { missingWpp: true, msg: 'O campo Whatsapp é obrigatório' });
+    }
+    if (!proposta) {
+      return fail(400, { missingProposta: true, msg: 'O campo Proposta é obrigatório' });
     }
     if (!whatsapp.match(whatsappRegex)) {
       return fail(400, {
@@ -42,15 +47,24 @@ export const actions = {
       nome: nome,
       whatsapp: whatsapp,
       email: email,
-      idCarro: params.id
+      troca: (troca === 'on' ? true : false),
+      proposta: proposta,
+      idCarro: params.slug
     };
+
+    const userData = {
+      nome: nome,
+      whatsapp: whatsapp,
+      email: email
+    }
 
     await locals.pb.admins.authWithPassword(PB_ADMIN_USER, PB_ADMIN_PASS);
 
-    const record = await locals.pb.collection('interesses').create(pbData);
+    const record = await locals.pb.collection('propostas').create(pbData);
+    const recordUser = await locals.pb.collection('clientes').create(userData);
 
     if (!record) throw error(400, { msg: 'Erro ao criar registro' });
 
-    return { success: true, record: JSON.stringify(record) };
+    return { success: true, record: JSON.stringify(record), msg: "Proposta enviada." };
   }
 };

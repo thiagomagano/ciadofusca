@@ -7,6 +7,10 @@
 
 	import ImagesCarrousel from '$lib/components/ImagesCarrousel.svelte';
 
+	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
+
+	import { enhance } from '$app/forms';
+
 	// import DialogForm from './DialogForm.svelte';
 
 	function redirecionaClienteProZap() {
@@ -78,14 +82,75 @@
 				><iconify-icon icon="ic:outline-whatsapp" /> Fale com o vendedor
 			</button>
 			{#if !form?.success}
-				<button on:click={() => (isOpen = true)} class="interesse" disabled={data.vendido}
-					><iconify-icon icon="game-icons:car-key" /> Registre seu Interesse
-				</button>
+				<Accordion>
+					<AccordionItem>
+						<svelte:fragment slot="lead"><iconify-icon icon="game-icons:car-key" /></svelte:fragment
+						>
+						<svelte:fragment slot="summary">Faça uma proposta</svelte:fragment>
+						<svelte:fragment slot="content">
+							<form class="flex flex-col space-y-6" method="POST" use:enhance>
+								<p class="text-sm">
+									Que bom que você tem interesse na nossa relíquia! Para realizar a sua proposta,
+									preencha os campos abaixo e clique no botão "enviar"!
+								</p>
+
+								<label class="label"
+									><span> Nome: </span>
+									<input class="input" type="text" name="nome" placeholder="Fulano da silva" />
+									{#if form?.missingName}
+										<p class="text-red-500">{form?.msg}</p>
+									{/if}
+								</label>
+								<label class="label">
+									<span>Whatsapp: </span>
+									<input type="text" class="input" name="whatsapp" placeholder="5199999999" />
+									{#if form?.missingWpp}
+										<p class="text-red-500">{form?.msg}</p>
+									{/if}
+								</label>
+								<label class="label">
+									<span> Email (opcional): </span>
+									<input class="input" type="email" name="email" placeholder="fulano@email.com" />
+								</label>
+								<label class="label flex align-center">
+									<span>Veículo na troca? </span>
+									<input class="checkbox ml-4" type="checkbox" name="troca" />
+								</label>
+								<label class="label"
+									><span>Qual é a sua proposta? </span>
+									<textarea
+										class="textarea"
+										type="textarea"
+										name="proposta"
+										placeholder="Tenho tal carro na troca no valor R$ mil, mais o resto em 12x"
+										rows="4"
+									/>
+									{#if form?.missingProposta}
+										<p class="text-red-500">{form?.msg}</p>
+									{/if}
+								</label>
+
+								<button type="submit" class="w-full1 bg-primary-500 hover:bg-primary-700"
+									>Enviar</button
+								>
+							</form>
+						</svelte:fragment>
+					</AccordionItem>
+				</Accordion>
+			{:else}
+				<aside class="alert variant-outline-success">
+					<!-- Icon -->
+					<div><iconify-icon icon="clarity:success-standard-line" width="24" /></div>
+					<!-- Message -->
+					<div class="alert-message">
+						<h3 class="h3">sucesso!</h3>
+						<p>{form?.msg}</p>
+					</div>
+					<!-- Actions -->
+				</aside>
 			{/if}
 		</div>
 	</div>
-
-	<!-- <DialogForm bind:isOpen carro={data} bind:form /> -->
 </section>
 
 <style>
@@ -139,10 +204,6 @@
 
 	button.zap {
 		background-color: var(--clr-VW-green);
-		color: var(--clr-neutral-100);
-	}
-	button.interesse {
-		background-color: var(--clr-primary);
 		color: var(--clr-neutral-100);
 	}
 

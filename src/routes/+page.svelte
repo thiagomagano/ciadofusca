@@ -52,7 +52,7 @@
 		<ul class="diferenciais">
 			<li class="item">
 				<iconify-icon icon="bi:credit-card" width={ICONE_SIZING} heigth={ICONE_SIZING} /> Parcelamos
-				em até 18x
+				em até 12x
 			</li>
 			<li class="item">
 				<iconify-icon icon="bi:bookmark-star" width={ICONE_SIZING} heigth={ICONE_SIZING} /> Modelos únicos

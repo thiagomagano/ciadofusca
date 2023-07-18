@@ -1,10 +1,11 @@
 <script>
 	import Hamburger from './Hamburger.svelte';
+	// import { LightSwitch } from '@skeletonlabs/skeleton';
 	export let styles;
 	export let sidebar = false;
 </script>
 
-<nav>
+<nav class="pt-6">
 	<div class="logo">
 		<a href="/">
 			<img src="/assets/images/logos/logo-white.png" alt="Logo cia do fusca" />
@@ -18,6 +19,7 @@
 		<li>
 			<a class={styles?.fontColor} data-sveltekit-reload href="/localizacao">Localização</a>
 		</li>
+		<!-- <LightSwitch /> -->
 	</ul>
 	<Hamburger bind:open={sidebar} />
 </nav>

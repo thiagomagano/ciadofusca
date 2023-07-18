@@ -4,8 +4,6 @@
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
 	import { onDestroy } from 'svelte';
 
-	import { InputChip } from '@skeletonlabs/skeleton';
-
 	//@TODO: Refatorar este código utilizando Svelte Stores;
 	let carros = data.carros;
 
@@ -26,25 +24,6 @@
 	});
 
 	let searchValue = '';
-
-	// let pesquisa = '';
-	// let marca = '';
-	// let decada = '';
-
-	// $: pesquisaConvertida = new RegExp(pesquisa, 'i');
-	// $: decadaConvertida = new RegExp(decada, 'i');
-
-	// $: carrosFiltrados = carrosPesquisa.filter((car) => car.palavrasChave.match(pesquisaConvertida));
-	// $: carrosFiltradosMarca = carrosFiltrados.filter((car) =>
-	// 	marca ? car.marca.includes(marca) : car
-	// );
-
-	// $: carrosFiltradosDecada = carrosFiltradosMarca.filter((car) =>
-	// 	car.modelo.match(decadaConvertida)
-	// );
-
-	// let todasMarcas = carros.map((car) => car.marca);
-	// let marcasUnicas = [...new Set(todasMarcas)];
 
 	function addFilter(filter) {
 		if (filter) {
@@ -70,7 +49,7 @@
 			<div class="input-group-shim"><iconify-icon icon="fa:search" /></div>
 			<input
 				type="search"
-				placeholder="Pesquisar... ex: 'Fusca' 'Azul' 'Placa Preta' '1300' 'Vendido' '1970'"
+				placeholder="ex: 'Fusca' 'Azul' 'Placa Preta' '1300' 'Vendido' '1970'"
 				bind:value={searchValue}
 				on:keypress={(e) => {
 					if (e.key === 'Enter') {
@@ -92,7 +71,7 @@
 					{results > 1 ? 'carros encontrados' : 'carro encontrado'}
 				</p>
 				<button
-					class="btn-sm rounded-full variant-filled-warning"
+					class="btn rounded-full variant-filled-warning"
 					on:click={() => ($searchStore.search = '')}>Limpar</button
 				>
 			</div>
