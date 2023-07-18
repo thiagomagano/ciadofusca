@@ -6,9 +6,8 @@
 	<title>Cia do Fusca | Localização</title>
 </svelte:head>
 
-<section class="wrapper">
-	<h1>Localização</h1>
-	<hr />
+<section class="wrapper py-12">
+	<h1 class="pb-16">Localização</h1>
 
 	<div class="localizacao">
 		<div class="fachada">
@@ -32,17 +31,9 @@
 </section>
 
 <style>
-	hr {
-		margin-bottom: 1rem;
-		border-top: 1px solid var(--clr-primary-600);
-	}
 	h1,
 	h3 {
 		text-align: center;
-	}
-
-	h3 {
-		color: var(--clr-neutral-700);
 	}
 
 	.localizacao {

@@ -4,7 +4,6 @@
 		const PHONE = `555133448970`;
 		const BODYMSG = `Olá, navegando pelo seu site me interessei pelos seus serviços. Gostaria de saber mais sobre eles.`;
 		const wppApiRedirectUrl = `${BASEURL}phone=${PHONE}&text=${BODYMSG}`;
-		//window.location.href = wppApiRedirectUrl;
 
 		const link = document.createElement('a');
 		link.href = wppApiRedirectUrl;
@@ -17,10 +16,9 @@
 	<title>Cia do Fusca | Serviços</title>
 </svelte:head>
 
-<section class="wrapper">
-	<div class="title">
+<section class="wrapper py-12">
+	<div class="title pb-8">
 		<h1>Serviços</h1>
-		<hr />
 	</div>
 
 	<div class="servicos">
@@ -81,10 +79,6 @@
 		cursor: pointer;
 	}
 
-	hr {
-		margin-bottom: 1rem;
-		border-top: 1px solid var(--clr-primary-600);
-	}
 	h1 {
 		text-align: center;
 	}

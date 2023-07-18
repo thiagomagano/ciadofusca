@@ -2,9 +2,8 @@
 	<title>Cia do Fusca | Sobre</title>
 </svelte:head>
 
-<section class="wrapper">
-	<h1>Quem Somos</h1>
-	<hr />
+<section class="wrapper py-8">
+	<h1 class="pb-12 text-center">Quem Somos</h1>
 
 	<div class="txt-wrapper">
 		<p>
@@ -16,21 +15,13 @@
 			exemplares de Fuscas à venda, peças e acessórios. Venham nos visitar, conhecer ou relembrar
 			este pedacinho do passado recente.
 		</p>
-		<div class="img-wrapper">
+		<div class="img-wrapper md:mt-4">
 			<img src="/assets/images/ciadofusca-quemsomos.jpg" alt="Donos da loja cia do fusca" />
 		</div>
 	</div>
 </section>
 
 <style>
-	hr {
-		margin-bottom: 1rem;
-		border-top: 1px solid var(--clr-primary-600);
-	}
-	h1 {
-		text-align: center;
-	}
-
 	div.txt-wrapper {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
