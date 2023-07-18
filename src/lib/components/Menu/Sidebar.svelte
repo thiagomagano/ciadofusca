@@ -2,7 +2,7 @@
 	export let open = false;
 </script>
 
-<aside class="absolute w-full h-full bg-primary-50 border-r-2 shadow-lg" class:open>
+<aside class="absolute w-full h-full bg-primary-600 border-r-2 shadow-lg" class:open>
 	<nav class="p-12 text-xl">
 		<a class="block" data-sveltekit-reload href="/">Home</a>
 		<a class="block" data-sveltekit-reload href="/carros">Veículos</a>

@@ -64,8 +64,16 @@
 			</li>
 		</ul>
 		<div class="button-group">
-			<a class="btn-xl variant-filled-primary" href="/carros">Confira nossos modelos </a>
-			<a class="btn-xl variant-outline-primary" href="/localizacao">Conheça nossa loja </a>
+			<a
+				class="btn-sm md:btn-lg variant-filled-primary hover:scale-105 transition-all"
+				href="/carros"
+				>Confira nossos modelos
+			</a>
+			<a
+				class="btn-sm md:btn-lg variant-outline-primary hover:scale-105 transition-all"
+				href="/localizacao"
+				>Conheça nossa loja
+			</a>
 		</div>
 	</div>
 </section>
@@ -73,9 +81,9 @@
 <ListaCarros carros={novidades} titulo="Novidades" />
 <ListaCarros carros={destaques} titulo="Destaques" />
 
-<div class="button-wrap wrapper">
-	<a data-sveltekit-reload href="/carros">
-		<button class="btn variant-filled-primary">
+<div class="flex items-center justify-center">
+	<a data-sveltekit-reload href="/carros" class="py-8">
+		<button class="btn variant-filled-primary flex gap-2">
 			Confira todos modelos <iconify-icon
 				icon="material-symbols:arrow-circle-right-outline"
 				width="24"
@@ -136,22 +144,6 @@
 		text-align: center;
 		text-transform: uppercase;
 		background-color: rgba(0, 0, 0, 0.35);
-	}
-
-	.button-wrap {
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-block: 1rem;
-	}
-
-	.button-wrap button {
-		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.5ch;
 	}
 
 	@media (max-width: 800px) {

@@ -76,7 +76,7 @@
 	<p>
 		Desenvolvido por <a
 			class=" text-sucess hover:underline"
-			href="http://thiagomagano.site"
+			href="http://www.thiagomagano.com.br"
 			target="_blank"
 			>Thiago Magano
 		</a> © 2023 Cia Do Fusca. Todos os Direitos Reservados.
