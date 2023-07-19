@@ -44,7 +44,7 @@
 		<!-- Button: Left -->
 		<button
 			type="button"
-			class="btn-icon variant-filled absolute left-4 w-1 bg-transparent md:w-8 md:variant-filled"
+			class="btn-icon absolute left-4 w-6 bg-transparent md:w-8 md:variant-filled"
 			on:click={carouselLeft}
 		>
 			<iconify-icon icon="fa:arrow-left" />
@@ -52,7 +52,7 @@
 		<!-- Full Images -->
 		<div
 			bind:this={elemCarousel}
-			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto scroll no-scrollbar"
+			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto scroll"
 		>
 			{#each dataImages as image}
 				<img
@@ -66,7 +66,7 @@
 		<!-- Button: Right -->
 		<button
 			type="button"
-			class="btn-icon variant-filled absolute right-4 w-1 bg-transparent md:w-8 md:variant-filled"
+			class="btn-icon absolute right-4 w-6 bg-transparent md:w-8 md:variant-filled"
 			on:click={carouselRight}
 		>
 			<iconify-icon icon="fa:arrow-right" />

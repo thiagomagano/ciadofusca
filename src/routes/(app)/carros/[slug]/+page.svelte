@@ -63,17 +63,42 @@
 	{/if}
 	<h1 class="h1 text-center md:pb-4">{data.titulo}</h1>
 	<div class="car">
-		<ImagesCarrousel {data} />
+		<div>
+			<ImagesCarrousel {data} />
+			<div class="py-4 flex flex-col gap-2">
+				<h4 class="h4">Descrição</h4>
+				<p>{@html data.descricao}</p>
+			</div>
+		</div>
 
 		<div class="infos">
-			<ul>
-				<li><strong>Versão: </strong> <span>{data.titulo}</span></li>
-				<li><strong>Marca: </strong> <span>{data.marca}</span></li>
-				<li><strong>Ano/Modelo: </strong> <span>{data.ano} / {data.modelo}</span></li>
-				<li><strong>Descrição: </strong> <span>{@html data.descricao}</span></li>
-				<li><strong>Cor: </strong> <span>{data.cor}</span></li>
-				<li class="money text-primary-500 h2">{toBRL(data.preco)}</li>
-			</ul>
+			<!-- Responsive Container (recommended) -->
+
+			<table class="table-compact table">
+				<tbody>
+					<tr>
+						<th>Versão:</th>
+						<td>{data.titulo}</td>
+					</tr>
+					<tr>
+						<th>Marca:</th>
+						<td>{data.marca}</td>
+					</tr>
+					<tr>
+						<th>Ano/Modelo:</th>
+						<td>{data.ano} / {data.modelo}</td>
+					</tr>
+					<tr>
+						<th>Cor:</th>
+						<td>{data.cor}</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<th>Preço:</th>
+					<td><h3 class="money h3 text-primary-500">{toBRL(data.preco)}</h3></td>
+				</tfoot>
+			</table>
+
 			<div class="button-group">
 				<button
 					class="zap"
@@ -82,7 +107,7 @@
 					disabled={data.vendido}
 					><iconify-icon icon="ic:outline-whatsapp" /> Fale com o vendedor
 				</button>
-				{#if !form?.success}
+				{#if !form?.success && !data.vendido}
 					<Accordion>
 						<AccordionItem>
 							<svelte:fragment slot="lead"
@@ -139,7 +164,7 @@
 							</svelte:fragment>
 						</AccordionItem>
 					</Accordion>
-				{:else}
+				{:else if form?.success}
 					<aside class="alert variant-outline-success">
 						<!-- Icon -->
 						<div><iconify-icon icon="clarity:success-standard-line" width="24" /></div>
@@ -150,6 +175,8 @@
 						</div>
 						<!-- Actions -->
 					</aside>
+				{:else}
+					{''}
 				{/if}
 			</div>
 		</div>
@@ -157,6 +184,10 @@
 </section>
 
 <style>
+	th {
+		align-self: flex-start;
+	}
+
 	div.car {
 		display: grid;
 		grid-template-columns: minmax(350px, 2fr) minmax(200px, 1fr);
@@ -168,13 +199,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-	}
-
-	ul {
-		display: flex;
-		flex-direction: column;
-		gap: 1ch;
-		justify-content: space-between;
 	}
 
 	div.button-group {
@@ -212,13 +236,12 @@
 
 	.vendido {
 		position: absolute;
-		top: 10%;
-		left: 120px;
-		/* background-color: red; */
+		top: 20%;
+		left: 15%;
 		color: #fff;
 		font-weight: 700;
 		display: block;
-		width: 50%;
+		width: 40%;
 		text-align: center;
 		opacity: 0.8;
 		z-index: 4564564;
