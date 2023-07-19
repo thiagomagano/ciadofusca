@@ -101,14 +101,17 @@
 
 			<div class="button-group">
 				<button
-					class="zap"
+					class="bg-green-600 hover:bg-primary-hover-token py-2 px-4 rounded-md uppercase font-bold flex items-center gap-4"
 					on:click={redirecionaClienteProZap}
 					target="_blank"
 					disabled={data.vendido}
-					><iconify-icon icon="ic:outline-whatsapp" /> Fale com o vendedor
+				>
+					<span class="flex items-center"><iconify-icon icon="ic:baseline-whatsapp" /></span>
+
+					<span>Fale com o vendedor</span>
 				</button>
 				{#if !form?.success && !data.vendido}
-					<Accordion>
+					<Accordion regionControl="bg-secondary-600 hover:bg-secondary-700 uppercase font-bold">
 						<AccordionItem>
 							<svelte:fragment slot="lead"
 								><iconify-icon icon="game-icons:car-key" /></svelte:fragment
@@ -157,7 +160,7 @@
 										{/if}
 									</label>
 
-									<button type="submit" class="w-full1 bg-primary-500 hover:bg-primary-700"
+									<button type="submit" class="btn w-full1 bg-primary-500 hover:bg-primary-700"
 										>Enviar</button
 									>
 								</form>
@@ -205,23 +208,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1ch;
-	}
-
-	button {
-		font-weight: 600;
-		text-transform: uppercase;
-		padding: 0.5rem;
-		border-radius: 1ch;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 1ch;
-		line-height: 1.5;
-	}
-
-	button.zap {
-		background-color: var(--clr-VW-green);
-		color: var(--clr-neutral-100);
 	}
 
 	@media (max-width: 720px) {
