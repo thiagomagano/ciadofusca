@@ -1,14 +1,14 @@
 <script>
-	import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
+	// import { Button, Modal, Label, Input, Checkbox } from 'flowbite-svelte';
 
 	import { enhance } from '$app/forms';
-	export let isOpen;
-	export let carro;
+	// export let isOpen;
+	// export let carro;
 
-	export let form;
+	// export let form;
 </script>
 
-<Modal bind:open={isOpen} size="xs" autoclose={false} class="w-full" outsideclose={true}>
+<!-- <Modal bind:open={isOpen} size="xs" autoclose={false} class="w-full" outsideclose={true}>
 	{#if !form?.success}
 		<form class="flex flex-col space-y-6" method="POST" use:enhance>
 			<h3 class="text-xl font-medium text-gray-900 dark:text-white">
@@ -43,4 +43,4 @@
 		<h3>Formulário enviado com sucesso!</h3>
 		<p>Em breve entraremos em contato com você.</p>
 	{/if}
-</Modal>
+</Modal> -->

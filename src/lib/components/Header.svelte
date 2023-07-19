@@ -6,7 +6,7 @@
 	let open = false;
 </script>
 
-<header class={styles ? `${styles?.bgColor} ${styles?.fontColor}` : ''}>
+<header class:styles={styles ? `${styles?.bgColor} ${styles?.fontColor}` : ''}>
 	<Sidebar bind:open />
 	<Navbar bind:sidebar={open} {styles} />
 </header>

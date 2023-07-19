@@ -10,5 +10,5 @@ export default function sortByData(data, key) {
     if (aData > bData) {
       return 1;
     }
-  })].reverse().slice(0, 3);
+  })];
 }

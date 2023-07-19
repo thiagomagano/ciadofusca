@@ -1,8 +1,16 @@
 <script>
-	import Destaques from './Destaques.svelte';
-	import Header from './Header.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import ListaCarros from '$lib/components/ListaCarros.svelte';
+
+	import sortArray from '$lib/utils/sortArrays';
+	import sortByData from '$lib/utils/sortByData';
 
 	export let data;
+
+	let cars = data.cars;
+
+	let destaques = sortArray(cars).slice(0, 5);
+	let novidades = sortByData(cars, 'created').reverse().slice(0, 5);
 
 	const ICONE_SIZING = '40';
 </script>
@@ -36,7 +44,7 @@
 	/>
 </svelte:head>
 
-<section class="banner">
+<section class="banner mb-4">
 	<Header styles={{ fontColor: 'text-white', bgColor: 'bg-transparent' }} />
 	<div class="hero-txt">
 		<h1>BEM-VINDO A CIA DO FUSCA</h1>
@@ -44,7 +52,7 @@
 		<ul class="diferenciais">
 			<li class="item">
 				<iconify-icon icon="bi:credit-card" width={ICONE_SIZING} heigth={ICONE_SIZING} /> Parcelamos
-				em até 18x
+				em até 12x
 			</li>
 			<li class="item">
 				<iconify-icon icon="bi:bookmark-star" width={ICONE_SIZING} heigth={ICONE_SIZING} /> Modelos únicos
@@ -56,13 +64,34 @@
 			</li>
 		</ul>
 		<div class="button-group">
-			<a class="button btn-fill" href="/carros">Confira nossos modelos </a>
-			<a class="button btn-outline" href="/localizacao">Conheça nossa loja </a>
+			<a
+				class="btn-sm md:btn-lg variant-filled-primary hover:scale-105 transition-all"
+				href="/carros"
+				>Confira nossos modelos
+			</a>
+			<a
+				class="btn-sm md:btn-lg variant-outline-primary hover:scale-105 transition-all"
+				href="/localizacao"
+				>Conheça nossa loja
+			</a>
 		</div>
 	</div>
 </section>
 
-<Destaques carros={data.items} />
+<ListaCarros carros={novidades} titulo="Novidades" />
+<ListaCarros carros={destaques} titulo="Destaques" />
+
+<div class="flex items-center justify-center">
+	<a data-sveltekit-reload href="/carros" class="py-8">
+		<button class="btn variant-filled-primary flex gap-2">
+			Confira todos modelos <iconify-icon
+				icon="material-symbols:arrow-circle-right-outline"
+				width="24"
+				height="24"
+			/>
+		</button>
+	</a>
+</div>
 
 <style>
 	section.banner {
@@ -74,7 +103,6 @@
 		justify-content: center;
 		width: 100%;
 		height: 700px;
-		color: var(--clr-primary-900);
 		background-image: url('/assets/images/banner/cf_fachada.png');
 		background-size: cover;
 		background-color: var(--clr-neutral-700);
@@ -96,19 +124,15 @@
 		line-height: 1.3;
 		letter-spacing: 0.1ch;
 		text-align: center;
-		color: var(--clr-primary-900);
 		padding: 0.5rem;
-		background-color: rgba(0, 0, 0, 0.25);
 	}
 
 	ul.diferenciais {
 		display: grid;
 		grid-template-columns: repeat(3, 175px);
 		gap: 2ch;
-		color: var(--clr-primary-900);
 	}
 	li.item {
-		border: 1px solid var(--clr-primary-900);
 		font-size: 0.85rem;
 		padding: 1rem;
 		border-radius: 1rem;
@@ -119,7 +143,7 @@
 		gap: 1ch;
 		text-align: center;
 		text-transform: uppercase;
-		background-color: rgba(0, 0, 0, 0.25);
+		background-color: rgba(0, 0, 0, 0.35);
 	}
 
 	@media (max-width: 800px) {

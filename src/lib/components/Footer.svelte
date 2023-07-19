@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<footer>
+<footer class="border-t-2 border-surface-800">
 	<div class="info-rodape">
 		<section>
 			<h5 class="icone-wrapper"><iconify-icon icon="ic:baseline-plus" /> Mais informações</h5>
@@ -43,12 +43,12 @@
 				<iconify-icon icon="icon-park-outline:time" width="26" heigth="26" /> Horário de Atendimento
 			</h5>
 			<ul>
-				<li class="font-bold">Segunda à Sexta:</li>
+				<li>Segunda à Sexta:</li>
 				<li>09:00h às 12:30h</li>
 				<li>13:30h às 18:30h</li>
 			</ul>
 			<ul>
-				<li class="font-bold">Sábado:</li>
+				<li>Sábado:</li>
 				<li>09:00h às 12:30h</li>
 			</ul>
 		</section>
@@ -75,8 +75,8 @@
 <div class="dev-rodape">
 	<p>
 		Desenvolvido por <a
-			class=" text-primary-800 font-semibold hover:underline"
-			href="http://thiagomagano.com.br"
+			class=" text-sucess hover:underline"
+			href="http://www.thiagomagano.com.br"
 			target="_blank"
 			>Thiago Magano
 		</a> © 2023 Cia Do Fusca. Todos os Direitos Reservados.
@@ -86,13 +86,10 @@
 <style>
 	footer {
 		padding: 1rem;
-		background-color: var(--clr-primary);
-		color: var(--clr-neutral-100);
 	}
 
 	h5 {
 		font-size: 1.2rem;
-		font-weight: bold;
 	}
 
 	div.info-rodape {
@@ -116,8 +113,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: var(--clr-primary-100);
-		color: var(--clr-neutral-100);
 		height: 60px;
 		text-align: center;
 	}
@@ -140,9 +135,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1ch;
-	}
-	ul.atendimento li {
-		text-wrap: balance;
 	}
 
 	ul li a:hover {
