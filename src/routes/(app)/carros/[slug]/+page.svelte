@@ -186,7 +186,7 @@
 									{/if}
 									<button
 										type="submit"
-										class="w-full1 bg-primary-500 hover:bg-primary-700"
+										class="btn w-full bg-primary-500 hover:bg-primary-700"
 										disabled={creating}
 									>
 										{creating ? 'Enviando proposta...' : 'Enviar'}
