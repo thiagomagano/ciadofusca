@@ -9,6 +9,9 @@
 
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 
+	import { ConicGradient } from '@skeletonlabs/skeleton';
+	//import { conicStops } from '$lib/utils/conicStops';
+
 	import { enhance } from '$app/forms';
 
 	// import DialogForm from './DialogForm.svelte';
@@ -27,7 +30,14 @@
 	}
 
 	let isOpen = false;
+
+	let creating = false;
 	export let form;
+
+	const conicStops = [
+		{ color: 'transparent', start: 0, end: 25 },
+		{ color: 'rgb(var(--color-primary-500))', start: 75, end: 100 }
+	];
 </script>
 
 <svelte:head>
@@ -110,6 +120,7 @@
 
 					<span>Fale com o vendedor</span>
 				</button>
+
 				{#if !form?.success && !data.vendido}
 					<Accordion regionControl="bg-secondary-600 hover:bg-secondary-700 uppercase font-bold">
 						<AccordionItem>
@@ -118,7 +129,18 @@
 							>
 							<svelte:fragment slot="summary">Faça uma proposta</svelte:fragment>
 							<svelte:fragment slot="content">
-								<form class="flex flex-col space-y-6" method="POST" use:enhance>
+								<form
+									class="flex flex-col space-y-6"
+									method="POST"
+									use:enhance={() => {
+										creating = true;
+
+										return async ({ update }) => {
+											await update();
+											creating = false;
+										};
+									}}
+								>
 									<p class="text-sm">
 										Que bom que você tem interesse na nossa relíquia! Para realizar a sua proposta,
 										preencha os campos abaixo e clique no botão "enviar"!
@@ -159,10 +181,16 @@
 											<p class="text-red-500">{form?.msg}</p>
 										{/if}
 									</label>
-
-									<button type="submit" class="btn w-full1 bg-primary-500 hover:bg-primary-700"
-										>Enviar</button
+									{#if creating}
+										<ConicGradient stops={conicStops} spin />
+									{/if}
+									<button
+										type="submit"
+										class="w-full1 bg-primary-500 hover:bg-primary-700"
+										disabled={creating}
 									>
+										{creating ? 'Enviando proposta...' : 'Enviar'}
+									</button>
 								</form>
 							</svelte:fragment>
 						</AccordionItem>
