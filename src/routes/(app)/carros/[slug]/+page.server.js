@@ -85,13 +85,9 @@ export const actions = {
     const recordUser = await locals.pb.collection('clientes').create(userData);
 
     const dataEmail = await sendEmail("site@email.ciadofusca.com.br",
-      ["othymag@gmail.com"],
+      ["othymag@gmail.com", "alecarcuchinski@gmail.com", "ciadofuscapoa@gmail.com", "canalacesso@hotmail.com"],
       templateSubject,
       templateBody);
-
-
-
-    console.log("dataEMail", dataEmail)
 
     if (!record) throw error(400, { msg: 'Erro ao criar registro' });
 
