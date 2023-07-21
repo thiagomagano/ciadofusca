@@ -46,7 +46,7 @@
 	<meta property="og:title" content={data.titulo} />
 	<meta
 		property="og:description"
-		content={`Venha conhecer esse maravilho ${data.titulo}, ela está a venda só aqui na Cia do Fusca. `}
+		content={`Venha conhecer esse maravilhoso ${data.titulo}, à venda só aqui na Cia do Fusca.`}
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={'http://ciadofusca.com.br/carros/' + data.id} />
