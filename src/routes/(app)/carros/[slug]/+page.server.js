@@ -72,7 +72,7 @@ export const actions = {
         <p> <strong>Nome:</strong> ${pbData.nome} </p>
         <p> <strong>Zap:</strong> ${pbData.whatsapp} </p>
         <p> <strong>Prposta:</strong> ${pbData.proposta} </p>
-        <p> <strong>Carro na Troca:</strong> ${pbData.troca === 'on' ? "Sim" : "Não"} </p>
+        <p> <strong>Carro na Troca:</strong> ${pbData.troca ? "Sim" : "Não"} </p>
         <p> <strong>Página do carro:</strong> www.ciadofusca.com.br/carros/${car.id} </p>
       </div>`
 
