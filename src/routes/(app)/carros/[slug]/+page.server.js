@@ -2,6 +2,7 @@ import { error, fail } from '@sveltejs/kit';
 import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
 import { PB_ADMIN_USER, PB_ADMIN_PASS } from '$env/static/private';
 import sendEmail from '$lib/utils/sendEmail'
+import toBRL from '$lib/utils/toBRL'
 
 
 let car;
@@ -12,12 +13,12 @@ export async function load({ params, fetch }) {
   const response = await fetch(
     PUBLIC_POCKETBASE_URL + `/api/collections/carros/records/` + params.slug
   );
-  const jsonData = await response.json();
+  car = await response.json();
 
-  car = jsonData;
 
-  if (jsonData) {
-    return jsonData;
+
+  if (car) {
+    return car;
   }
   throw error(404, 'Not found');
 }
@@ -68,16 +69,18 @@ export const actions = {
     const templateBody = `<div>
         <h1> Uma nova proposta foi recebida</h1>
         <p> <strong>Carro:</strong> ${car.titulo} </p>
-        <p> <strong>Valor:</strong> ${car.preco} </p>
+        <p> <strong>Valor:</strong> ${toBRL(car.preco)} </p>
         <p> <strong>Nome:</strong> ${pbData.nome} </p>
         <p> <strong>Zap:</strong> ${pbData.whatsapp} </p>
         <p> <strong>Prposta:</strong> ${pbData.proposta} </p>
         <p> <strong>Carro na Troca:</strong> ${pbData.troca ? "Sim" : "Não"} </p>
-        <p> <strong>Página do carro:</strong> www.ciadofusca.com.br/carros/${car.id} </p>
+        <p> <strong>Página do carro:</strong> www.ciadofusca.com.br/carros/${pbData.idCarro} </p>
       </div>`
 
 
     const templateSubject = `NOVA PROPOSTA RECEBIDA - ${car.titulo}`
+    const EmailList = ["othymag@gmail.com", "alecarcuchinski@gmail.com", "ciadofuscapoa@gmail.com", "canalacesso@hotmail.com"]
+
 
     await locals.pb.admins.authWithPassword(PB_ADMIN_USER, PB_ADMIN_PASS);
 
@@ -85,7 +88,7 @@ export const actions = {
     const recordUser = await locals.pb.collection('clientes').create(userData);
 
     const dataEmail = await sendEmail("site@email.ciadofusca.com.br",
-      ["othymag@gmail.com", "alecarcuchinski@gmail.com", "ciadofuscapoa@gmail.com", "canalacesso@hotmail.com"],
+      EmailList,
       templateSubject,
       templateBody);
 
