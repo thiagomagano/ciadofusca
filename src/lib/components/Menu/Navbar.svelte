@@ -13,11 +13,11 @@
 		</a>
 	</div>
 	<ul class="menu">
-		<li><a class={styles?.fontColor} data-sveltekit-reload href="/carros">Veículos</a></li>
-		<li><a class={styles?.fontColor} data-sveltekit-reload href="/servicos">Serviços</a></li>
-		<li><a class={styles?.fontColor} data-sveltekit-reload href="/sobre">Sobre</a></li>
+		<li><a class={styles?.fontColor} href="/carros">Veículos</a></li>
+		<li><a class={styles?.fontColor} href="/servicos">Serviços</a></li>
+		<li><a class={styles?.fontColor} href="/sobre">Sobre</a></li>
 		<li>
-			<a class={styles?.fontColor} data-sveltekit-reload href="/localizacao">Localização</a>
+			<a class={styles?.fontColor} href="/localizacao">Localização</a>
 		</li>
 		<!-- <LightSwitch /> -->
 	</ul>

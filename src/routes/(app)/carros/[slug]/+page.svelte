@@ -82,8 +82,6 @@
 		</div>
 
 		<div class="infos">
-			<!-- Responsive Container (recommended) -->
-
 			<table class="table-compact table">
 				<tbody>
 					<tr>

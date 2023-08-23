@@ -5,7 +5,6 @@
 </script>
 
 <a
-	data-sveltekit-reload
 	href="/carros/{car.id}"
 	class="card transition-all ease-in-out delay-250 duration-300 snap-start flex gap-2 pb-4 flex-col items-center text-center w-full text-balance min-w-[330px] relative hover:scale-101"
 >

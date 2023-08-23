@@ -82,7 +82,7 @@
 <ListaCarros carros={destaques} titulo="Destaques" />
 
 <div class="flex items-center justify-center">
-	<a data-sveltekit-reload href="/carros" class="py-8">
+	<a href="/carros" class="py-8">
 		<button class="btn variant-filled-primary flex gap-2">
 			Confira todos modelos <iconify-icon
 				icon="material-symbols:arrow-circle-right-outline"
