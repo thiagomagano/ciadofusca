@@ -39,7 +39,7 @@
 	}
 </script>
 
-<div class="flex gap-4 flex-col">
+<div class="flex gap-5 flex-col">
 	<div class="grid grid-cols-1fr items-center relative">
 		<!-- Button: Left -->
 		<button
@@ -52,11 +52,11 @@
 		<!-- Full Images -->
 		<div
 			bind:this={elemCarousel}
-			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto scroll"
+			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto scroll max-h-[700px]"
 		>
 			{#each dataImages as image}
 				<img
-					class="snap-center w-[1024px] rounded-container-token"
+					class="snap-center max-w-[1024px] object-contain rounded-container-token"
 					src={image.url}
 					alt={image.attribution}
 					loading="lazy"
@@ -77,7 +77,7 @@
 		{#each dataImages as image, i}
 			<button type="button" on:click={() => carouselThumbnail(i)}>
 				<img
-					class="rounded-container-token max-w-[250px]"
+					class="rounded-container-token max-w-[250px] object-contain"
 					src={image.url}
 					alt={image.attribution}
 					loading="lazy"

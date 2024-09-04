@@ -71,7 +71,7 @@
 			<img src="/assets/images/utils/selo_vendido.png" alt="Selo de vendido" />
 		</div>
 	{/if}
-	<h1 class="h1 text-center md:pb-4">{data.titulo}</h1>
+	<h1 class="h1 text-center pb-8">{data.titulo}</h1>
 	<div class="car">
 		<div>
 			<ImagesCarrousel {data} />
