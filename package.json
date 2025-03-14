@@ -31,7 +31,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@vercel/analytics": "^1.0.1",
 		"pocketbase": "^0.15.2",
 		"resend": "^0.17.1",
 		"svelte-scrollto": "^0.2.0"

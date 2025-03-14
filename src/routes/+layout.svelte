@@ -9,14 +9,10 @@
 	import '../app.postcss';
 
 	import Footer from '$lib/components/Footer.svelte';
-	import { dev } from '$app/environment';
 
 	import { fly } from 'svelte/transition';
 
 	export let data;
-	import { inject } from '@vercel/analytics';
-
-	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <main>
