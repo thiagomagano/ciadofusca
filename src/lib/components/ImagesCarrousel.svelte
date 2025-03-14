@@ -5,6 +5,8 @@
 
 	const dataImages = [];
 
+	console.log(data.imagens);
+
 	if (data.imagens.length > 0) {
 		data.imagens.forEach((image, index) => {
 			const carrouselImage = {
@@ -54,6 +56,7 @@
 			bind:this={elemCarousel}
 			class="snap-x snap-mandatory scroll-smooth flex overflow-x-auto scroll max-h-[700px]"
 		>
+			<!-- NÃO FUNCIONA NO FIREFOX -->
 			{#each dataImages as image}
 				<img
 					class="snap-center max-w-[1024px] object-contain rounded-container-token"
