@@ -20,7 +20,7 @@ export async function load({ params, fetch }) {
   if (car) {
     return car;
   }
-  throw error(404, 'Not found');
+  error(404, 'Not found');
 }
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -92,7 +92,7 @@ export const actions = {
       templateSubject,
       templateBody);
 
-    if (!record) throw error(400, { msg: 'Erro ao criar registro' });
+    if (!record) error(400, { msg: 'Erro ao criar registro' });
 
     return { success: true, record: JSON.stringify(record), msg: "Proposta enviada." };
   }

@@ -11,5 +11,5 @@ export async function load({ fetch, params }) {
   if (jsonData) {
     return { carros: sortArray(jsonData.items) };
   }
-  throw error(404, 'Not found');
+  error(404, 'Not found');
 }

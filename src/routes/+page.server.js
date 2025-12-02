@@ -12,5 +12,5 @@ export async function load({ fetch }) {
       carsTotal: data.totalItems,
     }
   }
-  throw error(404, 'Not found');
+  error(404, 'Not found');
 }

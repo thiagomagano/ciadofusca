@@ -18,7 +18,7 @@ export async function POST({ request, locals }) {
 
 	const record = await locals.pb.collection('interesses').create(data);
 
-	throw redirect(403, '/home');
+	redirect(403, '/home');
 
 	return new Response('Success...', record);
 }
