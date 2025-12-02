@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <footer class="border-t-2 border-surface-800">
 	<div class="info-rodape">
 		<section>
@@ -44,8 +41,8 @@
 			</h5>
 			<ul>
 				<li>Segunda à Sexta:</li>
-				<li>09:00h às 12:30h</li>
-				<li>13:30h às 18:30h</li>
+				<li>09:00h às 12:00h</li>
+				<li>13:30h às 18:00h</li>
 			</ul>
 			<ul>
 				<li>Sábado:</li>
@@ -54,8 +51,8 @@
 		</section>
 		<section>
 			<h5 class="icone-wrapper">
-				<iconify-icon icon="material-symbols:share-outline" width="26" heigth="26" /> Fique por dentro
-				das novidades
+				<iconify-icon icon="material-symbols:share-outline" width="26" heigth="26" /> Fique por
+				dentro das novidades
 			</h5>
 			<ul class="redes">
 				<li>
@@ -76,10 +73,11 @@
 	<p>
 		Desenvolvido por <a
 			class=" text-sucess hover:underline"
-			href="http://www.thiagomagano.com.br"
+			href="http://thiagomagano.com.br"
 			target="_blank"
 			>Thiago Magano
-		</a> © 2023 Cia Do Fusca. Todos os Direitos Reservados.
+		</a>
+		© 2023-{new Date().getFullYear()} Cia Do Fusca. Todos os Direitos Reservados.
 	</p>
 </div>
 
